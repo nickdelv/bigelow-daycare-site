@@ -1,0 +1,381 @@
+/* =============================================
+   BIGELOW COOPERATIVE — ENROLLMENT PAGE
+   ============================================= */
+
+/* =============================================
+   PAGE HEADER
+   ============================================= */
+
+.enrollment-header {
+}
+
+.enrollment-header .label {
+  margin-bottom: 1rem;
+}
+
+.enrollment-heading {
+  font-family: var(--font-display);
+  font-size: clamp(2.25rem, 4vw, 3.5rem);
+  font-weight: 600;
+  color: var(--charcoal);
+  letter-spacing: -0.02em;
+  line-height: 1.1;
+  margin-bottom: 1rem;
+  max-width: 640px;
+}
+
+.enrollment-sub {
+  font-size: 1.0625rem;
+  line-height: 1.75;
+  color: var(--charcoal-mid);
+  max-width: 560px;
+}
+
+/* =============================================
+   SECTION SHARED
+   ============================================= */
+
+.enrollment-section {
+  padding: var(--sp-xl) 0;
+}
+
+.enrollment-section + .enrollment-section {
+  border-top: 1px solid rgba(40, 40, 40, 0.07);
+}
+
+/* =============================================
+   HOW TO ENROLL — STEPS
+   ============================================= */
+
+.steps-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5px;
+  margin-top: var(--sp-lg);
+  background-color: rgba(40, 40, 40, 0.07);
+  border-radius: var(--r-lg);
+  overflow: hidden;
+}
+
+.step-card {
+  background: var(--white);
+  padding: 2rem 1.75rem 2.25rem;
+}
+
+.step-num {
+  font-family: var(--font-display);
+  font-size: 3rem;
+  font-weight: 600;
+  line-height: 1;
+  color: var(--terracotta);
+  opacity: 0.2;
+  margin-bottom: 1.25rem;
+  display: block;
+  letter-spacing: -0.03em;
+}
+
+.step-title {
+  font-family: var(--font-display);
+  font-size: 1.1875rem;
+  font-weight: 600;
+  color: var(--charcoal);
+  margin-bottom: 0.625rem;
+  letter-spacing: -0.01em;
+}
+
+.step-body {
+  font-size: 0.9375rem;
+  line-height: 1.7;
+  color: var(--charcoal-mid);
+}
+
+.step-body a {
+  color: var(--terracotta);
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.step-body a:hover {
+  text-decoration: underline;
+}
+
+/* =============================================
+   TUITION TABLES
+   ============================================= */
+
+.tuition-section {
+  background-color: var(--cream);
+}
+
+.tuition-intro {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  gap: 2rem;
+  margin-bottom: var(--sp-lg);
+  flex-wrap: wrap;
+}
+
+.tuition-note {
+  font-size: 0.875rem;
+  line-height: 1.65;
+  color: var(--charcoal-mid);
+  max-width: 440px;
+}
+
+.tuition-year {
+  font-size: 0.8125rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--charcoal-light);
+  white-space: nowrap;
+}
+
+.tuition-tables {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.5rem;
+}
+
+.tuition-table-wrap {
+  background: var(--white);
+  border-radius: var(--r-lg);
+  overflow: hidden;
+  box-shadow: 0 1px 8px rgba(40, 40, 40, 0.06);
+}
+
+.tuition-table-heading {
+  background: var(--charcoal);
+  color: var(--white);
+  padding: 1rem 1.25rem;
+  border-radius: var(--r-lg) var(--r-lg) 0 0;
+}
+
+.tuition-table-heading h3 {
+  font-family: var(--font-display);
+  font-size: 1rem;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+}
+
+.tuition-table-heading p {
+  font-size: 0.8125rem;
+  color: rgba(255, 255, 255, 0.6);
+  margin-top: 0.125rem;
+}
+
+.tuition-table-scroll {
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  border-radius: 0 0 var(--r-lg) var(--r-lg);
+}
+
+.tuition-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.875rem;
+}
+
+.tuition-table th {
+  background: var(--cream);
+  font-size: 0.6875rem;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--charcoal-light);
+  padding: 0.625rem 0.875rem;
+  text-align: left;
+  border-bottom: 1px solid rgba(40, 40, 40, 0.07);
+  white-space: nowrap;
+}
+
+.tuition-table th:not(:first-child) {
+  text-align: right;
+}
+
+.tuition-table td {
+  padding: 0.75rem 0.875rem;
+  color: var(--charcoal);
+  border-bottom: 1px solid rgba(40, 40, 40, 0.05);
+  vertical-align: middle;
+}
+
+.tuition-table td:not(:first-child) {
+  text-align: right;
+  font-variant-numeric: tabular-nums;
+  color: var(--charcoal-mid);
+}
+
+.tuition-table tr:last-child td {
+  border-bottom: none;
+}
+
+.tuition-table tbody tr:hover td {
+  background-color: var(--terracotta-wash);
+}
+
+.tuition-table .classroom-name {
+  font-weight: 500;
+  color: var(--charcoal);
+  line-height: 1.3;
+}
+
+.tuition-table .classroom-ages {
+  font-size: 0.8125rem;
+  color: var(--charcoal-light);
+  font-weight: 400;
+}
+
+.tuition-table .na {
+  color: var(--charcoal-light);
+  font-size: 0.8125rem;
+}
+
+.tuition-terms {
+  margin-top: 1rem;
+  padding: 1.125rem 1.375rem;
+  background: var(--white);
+  border-radius: var(--r-md);
+  border-left: 3px solid var(--terracotta);
+  font-size: 0.875rem;
+  line-height: 1.7;
+  color: var(--charcoal-mid);
+}
+
+.tuition-terms strong {
+  color: var(--charcoal);
+}
+
+/* =============================================
+   FINANCIAL ASSISTANCE
+   ============================================= */
+
+/* =============================================
+   FAQ — ACCORDION
+   ============================================= */
+
+.faq-section {
+  background-color: var(--cream);
+}
+
+.faq-grid {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  gap: 5rem;
+  align-items: start;
+}
+
+.faq-sidebar .section-body {
+  margin-bottom: 1.5rem;
+}
+
+.faq-list {
+  margin-top: var(--sp-md);
+  border-top: 1px solid rgba(40, 40, 40, 0.1);
+}
+
+.faq-item {
+  border-bottom: 1px solid rgba(40, 40, 40, 0.1);
+}
+
+.faq-question {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  width: 100%;
+  background: none;
+  border: none;
+  padding: 1.25rem 0;
+  cursor: pointer;
+  text-align: left;
+}
+
+.faq-question-text {
+  font-family: var(--font-body);
+  font-size: 1rem;
+  font-weight: 500;
+  color: var(--charcoal);
+  line-height: 1.4;
+}
+
+.faq-icon {
+  flex-shrink: 0;
+  width: 1.25rem;
+  height: 1.25rem;
+  color: var(--terracotta);
+  transition: transform 0.25s ease;
+}
+
+.faq-item.is-open .faq-icon {
+  transform: rotate(45deg);
+}
+
+.faq-answer {
+  display: none;
+  padding-bottom: 1.25rem;
+}
+
+.faq-item.is-open .faq-answer {
+  display: block;
+}
+
+.faq-answer p {
+  font-size: 0.9375rem;
+  line-height: 1.75;
+  color: var(--charcoal-mid);
+}
+
+.faq-answer p + p {
+  margin-top: 0.75rem;
+}
+
+/* =============================================
+   RESPONSIVE
+   ============================================= */
+
+@media (max-width: 1024px) {
+  .tuition-tables {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 860px) {
+  .enrollment-header {
+    padding: var(--sp-lg) 0;
+  }
+
+  .enrollment-section {
+    padding: var(--sp-lg) 0;
+  }
+
+  .steps-grid {
+    grid-template-columns: 1fr;
+    gap: 1.5px;
+  }
+
+  .faq-grid {
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+  }
+
+  .tuition-intro {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.5rem;
+  }
+}
+
+@media (max-width: 600px) {
+  .tuition-table th,
+  .tuition-table td {
+    padding: 0.625rem 0.875rem;
+    font-size: 0.8125rem;
+  }
+
+  .enrollment-cta .cta-actions {
+    flex-direction: column;
+    align-items: center;
+  }
+}

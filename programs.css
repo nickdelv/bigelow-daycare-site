@@ -1,0 +1,527 @@
+/* =============================================
+   BIGELOW COOPERATIVE — PROGRAMS PAGE
+   ============================================= */
+
+/* =============================================
+   PAGE HEADER
+   ============================================= */
+
+.programs-header {
+}
+
+.programs-header .label {
+  margin-bottom: 1rem;
+}
+
+.programs-heading {
+  font-family: var(--font-display);
+  font-size: clamp(2.25rem, 4vw, 3.5rem);
+  font-weight: 600;
+  color: var(--charcoal);
+  letter-spacing: -0.02em;
+  line-height: 1.1;
+  margin-bottom: 1rem;
+  max-width: 640px;
+}
+
+.programs-sub {
+  font-size: 1.0625rem;
+  line-height: 1.75;
+  color: var(--charcoal-mid);
+  max-width: 560px;
+}
+
+/* =============================================
+   CLASSROOM CARDS
+   ============================================= */
+
+.classrooms-section {
+  padding: var(--sp-2xl) 0;
+  background-color: var(--white);
+}
+
+.classroom-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.5rem;
+}
+
+.classroom-card {
+  border-radius: var(--r-xl);
+  overflow: hidden;
+  background: var(--cream);
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.classroom-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 20px 52px rgba(40, 40, 40, 0.1);
+}
+
+.classroom-card-image {
+  position: relative;
+  aspect-ratio: 4 / 3;
+  overflow: hidden;
+}
+
+.classroom-card-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.45s ease;
+}
+
+.classroom-card:hover .classroom-card-image img {
+  transform: scale(1.04);
+}
+
+/* Age badge overlaid on photo */
+.classroom-card-badge {
+  position: absolute;
+  bottom: 1rem;
+  left: 1rem;
+  background: rgba(28, 28, 28, 0.72);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border-radius: var(--r-sm);
+  padding: 0.5rem 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.badge-ages {
+  font-family: var(--font-display);
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--white);
+  line-height: 1;
+  letter-spacing: -0.02em;
+}
+
+.badge-unit {
+  font-size: 0.6875rem;
+  font-weight: 400;
+  letter-spacing: 0;
+  margin-left: 0.075em;
+}
+
+.classroom-card-body {
+  padding: 1.5rem 1.75rem 2rem;
+}
+
+.classroom-name {
+  font-family: var(--font-display);
+  font-size: 1.375rem;
+  font-weight: 600;
+  color: var(--charcoal);
+  letter-spacing: -0.01em;
+  margin-bottom: 0.625rem;
+  line-height: 1.2;
+}
+
+.classroom-desc {
+  font-size: 0.9375rem;
+  line-height: 1.75;
+  color: var(--charcoal-mid);
+}
+
+/* =============================================
+   DAILY SCHEDULES
+   ============================================= */
+
+.schedules-section {
+  padding: var(--sp-2xl) 0;
+  background-color: var(--cream);
+}
+
+.schedules-intro {
+  margin-bottom: 2.5rem;
+  max-width: 680px;
+}
+
+.schedules-intro .label {
+  margin-bottom: 0.875rem;
+}
+
+.schedules-note {
+  font-size: 0.875rem;
+  color: var(--charcoal-light);
+  font-style: italic;
+  line-height: 1.65;
+}
+
+/* ---- Tab shell ---- */
+.schedule-tabs {
+  background: var(--white);
+  border-radius: var(--r-xl);
+  box-shadow: 0 2px 16px rgba(40, 40, 40, 0.06);
+  overflow: hidden;
+}
+
+/* ---- Tab button row ---- */
+.tab-list {
+  display: flex;
+  background: var(--cream-dark);
+  border-bottom: 2px solid rgba(40, 40, 40, 0.08);
+  overflow-x: auto;
+  scrollbar-width: none;
+  -webkit-overflow-scrolling: touch;
+  padding-right: 1rem;
+}
+
+.tab-list::-webkit-scrollbar {
+  display: none;
+}
+
+.tab-btn {
+  flex: 1 1 0;
+  min-width: 0;
+  background: none;
+  border: none;
+  padding: 1.125rem 1.5rem 1rem;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0.2rem;
+  position: relative;
+  outline: none;
+  transition: background-color 0.15s;
+}
+
+.tab-btn:focus-visible {
+  outline: 2px solid var(--terracotta);
+  outline-offset: -2px;
+}
+
+/* Terracotta underline indicator */
+.tab-btn::after {
+  content: "";
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background-color: var(--terracotta);
+  transform: scaleX(0);
+  transition: transform 0.2s ease;
+  transform-origin: left;
+}
+
+.tab-btn.is-active::after {
+  transform: scaleX(1);
+}
+
+.tab-btn:hover {
+  background-color: rgba(40, 40, 40, 0.04);
+}
+
+.tab-name {
+  font-family: var(--font-display);
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--charcoal-light);
+  transition: color 0.2s;
+  line-height: 1.25;
+  white-space: nowrap;
+}
+
+.tab-ages {
+  font-size: 0.75rem;
+  font-weight: 400;
+  color: var(--charcoal-light);
+  transition: color 0.2s;
+  white-space: nowrap;
+}
+
+.tab-btn:hover .tab-name {
+  color: var(--charcoal);
+}
+
+.tab-btn.is-active .tab-name {
+  color: var(--terracotta);
+}
+
+.tab-btn.is-active .tab-ages {
+  color: var(--terracotta);
+  opacity: 0.8;
+}
+
+/* ---- Tab panels ---- */
+.tab-panels {
+  /* inherits white bg from .schedule-tabs */
+}
+
+.tab-panel {
+  display: none;
+  padding: 2.25rem 2.5rem 2.75rem;
+}
+
+.tab-panel.is-active {
+  display: block;
+}
+
+.schedule-note {
+  font-size: 0.8125rem;
+  color: var(--charcoal-light);
+  font-style: italic;
+  margin-bottom: 1.5rem;
+  line-height: 1.6;
+}
+
+/* ---- Schedule rows ---- */
+.schedule-table {
+  display: flex;
+  flex-direction: column;
+}
+
+.schedule-row {
+  display: grid;
+  grid-template-columns: 152px 1fr;
+  gap: 1.5rem;
+  padding: 0.75rem 0;
+  border-bottom: 1px solid rgba(40, 40, 40, 0.06);
+  align-items: baseline;
+}
+
+.schedule-row:first-child {
+  border-top: none;
+}
+
+.schedule-row:last-child {
+  border-bottom: none;
+}
+
+/* Extended day row — subtle highlight, bleeds to tab-panel edges */
+.schedule-row--extended {
+  background-color: var(--terracotta-wash);
+  padding: 0.75rem 2.5rem;
+  margin: 0.5rem -2.5rem 0;
+  border-bottom: none;
+}
+
+.schedule-row--extended .sched-time {
+  color: var(--terracotta);
+}
+
+.sched-time {
+  font-size: 0.8125rem;
+  font-weight: 600;
+  color: var(--charcoal-light);
+  letter-spacing: 0.01em;
+  white-space: nowrap;
+  line-height: 1.55;
+  padding-top: 0.05em;
+}
+
+.sched-activity {
+  font-size: 0.9375rem;
+  color: var(--charcoal);
+  line-height: 1.6;
+}
+
+/* =============================================
+   A DAY AT BIGELOW
+   ============================================= */
+
+.day-section {
+  padding: var(--sp-2xl) 0;
+  background-color: var(--white);
+}
+
+.day-inner {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--sp-xl);
+  align-items: center;
+}
+
+.day-text .label {
+  margin-bottom: 1rem;
+}
+
+/* day section has no following link — suppress last-of-type spacing from shared */
+.day-text .section-body-wrap p:last-of-type {
+  margin-bottom: 0;
+}
+
+.day-images {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.day-image-top,
+.day-image-bottom {
+  border-radius: var(--r-xl);
+  overflow: hidden;
+}
+
+.day-image-top {
+  aspect-ratio: 4 / 3;
+  box-shadow: 0 12px 36px rgba(40, 40, 40, 0.1);
+}
+
+.day-image-bottom {
+  aspect-ratio: 16 / 9;
+  box-shadow: 0 8px 24px rgba(40, 40, 40, 0.08);
+}
+
+.day-image-top img,
+.day-image-bottom img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.day-image-bottom img {
+  object-position: center 30%;
+}
+
+/* =============================================
+   HIPKIDS CALLOUT
+   ============================================= */
+
+.hipkids-section {
+  padding: var(--sp-2xl) 0;
+  background-color: var(--cream);
+}
+
+/* =============================================
+   RESPONSIVE
+   ============================================= */
+
+@media (max-width: 1024px) {
+  .classroom-grid {
+    gap: 1.25rem;
+  }
+}
+
+@media (max-width: 860px) {
+  .programs-header {
+    padding: var(--sp-lg) 0;
+  }
+
+  .classrooms-section {
+    padding: 5rem 0;
+  }
+
+  .classroom-grid {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+
+  .classroom-card-image {
+    aspect-ratio: 16 / 9;
+  }
+
+  .schedules-section {
+    padding: 5rem 0;
+  }
+
+  .tab-btn {
+    padding: 1rem 1.25rem 0.875rem;
+  }
+
+  .tab-panel {
+    padding: 1.75rem 1.75rem 2.25rem;
+  }
+
+  .schedule-row--extended {
+    padding: 0.75rem 1.75rem;
+    margin: 0.5rem -1.75rem 0;
+  }
+
+  .schedule-row {
+    grid-template-columns: 128px 1fr;
+    gap: 1rem;
+  }
+
+  .day-section {
+    padding: 5rem 0;
+  }
+
+  .day-inner {
+    grid-template-columns: 1fr;
+    gap: var(--sp-lg);
+  }
+
+  .day-images {
+    order: -1;
+    flex-direction: row;
+  }
+
+  .day-image-top {
+    flex: 1;
+    aspect-ratio: auto;
+    min-height: 240px;
+  }
+
+  .day-image-bottom {
+    flex: 1;
+    aspect-ratio: auto;
+    min-height: 240px;
+  }
+
+  .hipkids-section {
+    padding: 5rem 0;
+  }
+}
+
+@media (max-width: 600px) {
+  .tab-btn {
+    padding: 0.875rem 1rem;
+    flex: 0 0 auto;
+  }
+
+  .tab-name {
+    font-size: 0.9rem;
+  }
+
+  .tab-ages {
+    display: none;
+  }
+
+  .tab-panel {
+    padding: 1.25rem 1.25rem 1.75rem;
+  }
+
+  .schedule-row {
+    grid-template-columns: 1fr;
+    gap: 0.2rem;
+    padding: 0.625rem 0;
+  }
+
+  .schedule-row--extended {
+    padding: 0.625rem 1.25rem;
+    margin: 0.5rem -1.25rem 0;
+  }
+
+  .sched-time {
+    font-size: 0.75rem;
+    color: var(--terracotta);
+    font-weight: 700;
+  }
+
+  .schedule-row--extended .sched-time {
+    color: var(--terracotta);
+  }
+
+  .day-images {
+    flex-direction: column;
+  }
+
+  .day-image-top,
+  .day-image-bottom {
+    min-height: 0;
+    flex: none;
+    aspect-ratio: 4 / 3;
+  }
+
+  .day-image-bottom {
+    display: none;
+  }
+}

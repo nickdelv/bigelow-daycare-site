@@ -1,0 +1,139 @@
+/* =============================================
+   ABOUT PAGE — about.css
+   ============================================= */
+
+/* =============================================
+   PAGE HEADER
+   ============================================= */
+
+.about-header {
+}
+
+.about-header .label {
+  margin-bottom: 1rem;
+}
+
+.about-heading {
+  font-family: var(--font-display);
+  font-size: clamp(2.25rem, 4vw, 3.5rem);
+  font-weight: 600;
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+  color: var(--charcoal);
+  margin: 0 0 1rem;
+}
+
+.about-sub {
+  font-size: 1.0625rem;
+  line-height: 1.75;
+  color: var(--charcoal-mid);
+  max-width: 560px;
+}
+
+/* =============================================
+   SPLIT LAYOUT — used by all body sections
+   ============================================= */
+
+.about-split {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--sp-2xl);
+  align-items: center;
+}
+
+.about-split--reverse {
+  direction: rtl;
+}
+
+.about-split--reverse > * {
+  direction: ltr;
+}
+
+/* ---- Text column ---- */
+.about-split-text {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.about-split-text .label {
+  margin-bottom: 1rem;
+}
+
+/* ---- Image column ---- */
+.about-split-image {
+  aspect-ratio: 4 / 5;
+  border-radius: var(--r-xl);
+  overflow: hidden;
+  box-shadow: 0 12px 36px rgba(40, 40, 40, 0.1);
+}
+
+.about-split-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center top;
+  display: block;
+}
+
+/* =============================================
+   SECTION SPACING & BACKGROUNDS
+   ============================================= */
+
+.story-section,
+.philosophy-section,
+.coop-section,
+.teachers-section {
+  padding: var(--sp-2xl) 0;
+}
+
+/* Alternate cream background for rhythm — matches other pages */
+.philosophy-section,
+.teachers-section {
+  background: var(--cream);
+}
+
+/* =============================================
+   SOMERPROMISE
+   ============================================= */
+
+.somerpromise-section {
+  padding: var(--sp-2xl) 0;
+  background: var(--white);
+}
+
+/* =============================================
+   LAST-OF-TYPE OVERRIDES
+   Philosophy section has no text-link following
+   the body wrap — suppress shared.css bottom margin
+   ============================================= */
+
+.philosophy-section .section-body-wrap p:last-of-type {
+  margin-bottom: 0;
+}
+
+/* =============================================
+   RESPONSIVE
+   ============================================= */
+
+@media (max-width: 860px) {
+  .about-split,
+  .about-split--reverse {
+    grid-template-columns: 1fr;
+    direction: ltr;
+    gap: var(--sp-xl);
+  }
+
+  .about-split-image {
+    aspect-ratio: 3 / 2;
+    order: -1; /* Image above text on mobile */
+  }
+
+  .story-section,
+  .philosophy-section,
+  .coop-section,
+  .teachers-section,
+  .somerpromise-section {
+    padding: 5rem 0;
+  }
+}

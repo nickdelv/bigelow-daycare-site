@@ -1,0 +1,466 @@
+/* =============================================
+   BIGELOW COOPERATIVE — HOME PAGE STYLES
+   ============================================= */
+
+/* =============================================
+   HERO
+   ============================================= */
+
+.hero {
+  display: flex;
+  min-height: calc(90vh - var(--nav-height));
+  overflow: hidden;
+}
+
+.hero-image {
+  flex: 0 0 60%;
+  position: relative;
+  overflow: hidden;
+}
+
+.hero-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: left center;
+  display: block;
+}
+
+.hero-content {
+  flex: 1;
+  background-color: var(--cream);
+  display: flex;
+  align-items: center;
+  padding: var(--sp-xl) var(--sp-xl) var(--sp-xl) var(--sp-lg);
+}
+
+.hero-inner {
+  max-width: 430px;
+}
+
+.hero-label {
+  margin-bottom: 1.125rem;
+}
+
+.hero-headline {
+  font-family: var(--font-display);
+  font-size: clamp(2.75rem, 3.75vw, 4rem);
+  font-weight: 600;
+  line-height: 1.06;
+  color: var(--charcoal);
+  margin-bottom: 1.25rem;
+  letter-spacing: -0.01em;
+}
+
+.hero-sub {
+  font-size: 1.0625rem;
+  color: var(--charcoal-mid);
+  line-height: 1.7;
+  margin-bottom: 2rem;
+  max-width: 360px;
+}
+
+.hero-actions {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+}
+
+/* =============================================
+   COOPERATIVE MODEL
+   ============================================= */
+
+.coop-section {
+  padding: var(--sp-2xl) 0;
+  background-color: var(--white);
+}
+
+.coop-inner {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--sp-xl);
+  align-items: center;
+}
+
+.coop-text .label {
+  margin-bottom: 1rem;
+}
+
+.coop-heading {
+  font-family: var(--font-display);
+  font-size: clamp(2rem, 2.75vw, 2.875rem);
+  font-weight: 600;
+  line-height: 1.12;
+  color: var(--charcoal);
+  margin-bottom: 1.5rem;
+  letter-spacing: -0.01em;
+}
+
+.coop-heading em {
+  font-style: italic;
+  color: var(--terracotta);
+}
+
+.coop-image {
+  border-radius: var(--r-2xl);
+  overflow: hidden;
+  aspect-ratio: 4 / 3;
+  box-shadow: 0 16px 48px rgba(40, 40, 40, 0.1);
+}
+
+.coop-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* =============================================
+   PROGRAMS
+   ============================================= */
+
+.programs-section {
+  padding: var(--sp-2xl) 0;
+  background-color: var(--cream);
+}
+
+.programs-header {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  margin-bottom: 2.25rem;
+  gap: 1rem;
+}
+
+.programs-header .label {
+  margin-bottom: 0.875rem;
+}
+
+.programs-title {
+  font-family: var(--font-display);
+  font-size: clamp(1.875rem, 2.5vw, 2.5rem);
+  font-weight: 600;
+  line-height: 1.15;
+  color: var(--charcoal);
+  letter-spacing: -0.01em;
+}
+
+.programs-title em {
+  font-style: italic;
+  font-weight: 400;
+}
+
+.programs-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.125rem;
+}
+
+.program-card {
+  background-color: var(--white);
+  border-radius: var(--r-lg);
+  padding: 1.875rem 1.625rem 2rem;
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.program-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 16px 40px rgba(40, 40, 40, 0.09);
+}
+
+.program-ages {
+  font-family: var(--font-display);
+  font-size: 2.25rem;
+  font-weight: 700;
+  color: var(--terracotta);
+  line-height: 1;
+  margin-bottom: 0.5rem;
+  letter-spacing: -0.02em;
+}
+
+.program-ages .unit {
+  font-size: 1rem;
+  font-weight: 400;
+  letter-spacing: 0;
+}
+
+.program-name {
+  font-family: var(--font-display);
+  font-size: 1.0625rem;
+  font-weight: 600;
+  color: var(--slate);
+  margin-bottom: 0.875rem;
+}
+
+.program-desc {
+  font-size: 0.875rem;
+  line-height: 1.7;
+  color: var(--charcoal-light);
+}
+
+/* =============================================
+   OUR SPACE
+   ============================================= */
+
+.space-section {
+  padding: var(--sp-2xl) 0;
+  background-color: var(--white);
+}
+
+.space-inner {
+  display: grid;
+  grid-template-columns: 1fr 1.15fr;
+  gap: var(--sp-xl);
+  align-items: center;
+}
+
+.space-text .label {
+  margin-bottom: 1rem;
+}
+
+.space-image {
+  border-radius: var(--r-2xl);
+  overflow: hidden;
+  aspect-ratio: 4 / 3;
+  box-shadow: 0 16px 48px rgba(40, 40, 40, 0.1);
+}
+
+.space-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* =============================================
+   OUTDOOR
+   ============================================= */
+
+.outdoor-section {
+  padding: var(--sp-2xl) 0;
+  background-color: var(--terracotta-wash);
+}
+
+.outdoor-inner {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--sp-xl);
+  align-items: center;
+}
+
+.outdoor-image {
+  border-radius: var(--r-2xl);
+  overflow: hidden;
+  aspect-ratio: 1 / 1;
+  box-shadow: 0 16px 48px rgba(40, 40, 40, 0.1);
+}
+
+.outdoor-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 30%;
+}
+
+.outdoor-text .label {
+  margin-bottom: 1rem;
+}
+
+/* =============================================
+   TESTIMONIALS
+   ============================================= */
+
+.testimonials-section {
+  padding: var(--sp-2xl) 0;
+  background-color: var(--cream);
+}
+
+.testimonials-header {
+  text-align: center;
+  margin-bottom: 2.5rem;
+}
+
+.testimonials-header .label {
+  margin-bottom: 0.875rem;
+}
+
+.testimonials-track {
+  display: flex;
+  gap: 1.25rem;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  -webkit-overflow-scrolling: touch;
+  padding-bottom: 0.25rem;
+  scrollbar-width: none;
+}
+
+.testimonials-track::-webkit-scrollbar {
+  display: none;
+}
+
+.testimonial-card {
+  flex: 0 0 calc(33.333% - 0.85rem);
+  scroll-snap-align: start;
+  background-color: var(--white);
+  border-radius: var(--r-lg);
+  padding: 2.25rem 1.875rem 1.875rem;
+  position: relative;
+  overflow: hidden;
+}
+
+.t-mark {
+  font-family: var(--font-display);
+  font-size: 6rem;
+  font-weight: 700;
+  line-height: 0.8;
+  color: var(--terracotta);
+  opacity: 0.12;
+  position: absolute;
+  top: 1rem;
+  left: 1.25rem;
+  user-select: none;
+  pointer-events: none;
+}
+
+.t-text {
+  font-size: 0.9375rem;
+  line-height: 1.8;
+  color: var(--charcoal);
+  margin-bottom: 1.375rem;
+  position: relative;
+  z-index: 1;
+}
+
+.t-attr {
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: var(--slate);
+}
+
+/* Prev/next nav buttons */
+.testimonials-nav {
+  display: flex;
+  justify-content: flex-end;
+  gap: 0.5rem;
+  margin-top: 1.25rem;
+}
+
+.t-nav-btn {
+  width: 2.25rem;
+  height: 2.25rem;
+  border-radius: 50%;
+  border: 1.5px solid var(--terracotta);
+  background: transparent;
+  color: var(--terracotta);
+  font-size: 1rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition:
+    background-color 0.2s,
+    color 0.2s;
+  line-height: 1;
+}
+
+.t-nav-btn:hover {
+  background-color: var(--terracotta);
+  color: var(--white);
+}
+
+/* =============================================
+   RESPONSIVE — HOME
+   ============================================= */
+
+@media (max-width: 1024px) {
+  .programs-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 860px) {
+  .hero {
+    flex-direction: column;
+    min-height: auto;
+  }
+
+  .hero-image {
+    flex: none;
+    width: 100%;
+    aspect-ratio: 16 / 9;
+  }
+
+  .hero-image img {
+    object-position: center 40%;
+  }
+
+  .hero-content {
+    padding: var(--sp-lg) var(--sp-md);
+  }
+
+  .hero-inner {
+    max-width: 100%;
+  }
+
+  .hero-sub {
+    max-width: 100%;
+  }
+
+  .coop-section,
+  .programs-section,
+  .space-section,
+  .outdoor-section,
+  .testimonials-section,
+  .cta-section {
+    padding-top: 5rem;
+    padding-bottom: 5rem;
+  }
+
+  .coop-inner,
+  .space-inner,
+  .outdoor-inner {
+    grid-template-columns: 1fr;
+    gap: var(--sp-lg);
+  }
+
+  .coop-image img {
+    object-position: center 25%;
+  }
+
+  /* On mobile, move outdoor image below text */
+  .outdoor-image {
+    order: 1;
+    aspect-ratio: 4 / 3;
+  }
+
+  .outdoor-text {
+    order: 0;
+  }
+
+  .testimonial-card {
+    flex: 0 0 65vw;
+  }
+
+  .programs-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1rem;
+  }
+}
+
+@media (max-width: 600px) {
+  .programs-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .hero-actions {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1rem;
+  }
+
+  .cta-actions {
+    flex-direction: column;
+  }
+}
