@@ -404,6 +404,10 @@ address {
     --container-pad: 1.75rem;
   }
 
+  .site-nav .container {
+    padding: 0 1.75rem;
+  }
+
   /* Hamburger button */
   .nav-hamburger {
     display: flex;
@@ -490,6 +494,16 @@ address {
 }
 
 @media (max-width: 600px) {
+  .site-nav .container {
+    padding: 0 1rem;
+  }
+
+  .footer-bottom {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.25rem;
+  }
+
   .footer-grid {
     grid-template-columns: 1fr;
   }
@@ -630,8 +644,7 @@ address {
   }
 
   .partner-logo {
-    width: 140px;
-    margin: 0 auto;
+    display: none;
   }
 }
 

@@ -409,11 +409,6 @@
     padding: 5rem 0;
   }
 
-  .classroom-grid {
-    grid-template-columns: 1fr;
-    gap: 1rem;
-  }
-
   .classroom-card-image {
     aspect-ratio: 16 / 9;
   }
@@ -472,6 +467,11 @@
 }
 
 @media (max-width: 600px) {
+  .classroom-grid {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+
   .tab-btn {
     padding: 0.875rem 1rem;
     flex: 0 0 auto;
