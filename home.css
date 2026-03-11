@@ -407,16 +407,6 @@
     max-width: 100%;
   }
 
-  .coop-section,
-  .programs-section,
-  .space-section,
-  .outdoor-section,
-  .testimonials-section,
-  .cta-section {
-    padding-top: 5rem;
-    padding-bottom: 5rem;
-  }
-
   .coop-inner,
   .space-inner,
   .outdoor-inner {

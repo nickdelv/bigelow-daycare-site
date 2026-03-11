@@ -402,6 +402,8 @@ address {
 @media (max-width: 860px) {
   :root {
     --container-pad: 1.75rem;
+    --sp-xl: 3rem;
+    --sp-2xl: 4.5rem;
   }
 
   .site-nav .container {
@@ -494,6 +496,11 @@ address {
 }
 
 @media (max-width: 600px) {
+  :root {
+    --sp-xl: 2.5rem;
+    --sp-2xl: 3.5rem;
+  }
+
   .site-nav .container {
     padding: 0 1rem;
   }

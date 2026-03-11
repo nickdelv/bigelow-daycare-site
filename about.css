@@ -128,12 +128,4 @@
     aspect-ratio: 3 / 2;
     order: -1; /* Image above text on mobile */
   }
-
-  .story-section,
-  .philosophy-section,
-  .coop-section,
-  .teachers-section,
-  .somerpromise-section {
-    padding: 5rem 0;
-  }
 }
