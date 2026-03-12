@@ -3,42 +3,11 @@
    ============================================= */
 
 /* =============================================
-   PAGE HEADER
-   ============================================= */
-
-.about-header {
-}
-
-.about-header .label {
-  margin-bottom: 1rem;
-}
-
-.about-heading {
-  font-family: var(--font-display);
-  font-size: clamp(2.25rem, 4vw, 3.5rem);
-  font-weight: 600;
-  line-height: 1.1;
-  letter-spacing: -0.02em;
-  color: var(--charcoal);
-  margin: 0 0 1rem;
-}
-
-.about-sub {
-  font-size: 1.0625rem;
-  line-height: 1.75;
-  color: var(--charcoal-mid);
-  max-width: 560px;
-}
-
-/* =============================================
    SPLIT LAYOUT — used by all body sections
    ============================================= */
 
 .about-split {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
   gap: var(--sp-2xl);
-  align-items: center;
 }
 
 .about-split--reverse {

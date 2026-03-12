@@ -3,35 +3,6 @@
    ============================================= */
 
 /* =============================================
-   PAGE HEADER
-   ============================================= */
-
-.programs-header {
-}
-
-.programs-header .label {
-  margin-bottom: 1rem;
-}
-
-.programs-heading {
-  font-family: var(--font-display);
-  font-size: clamp(2.25rem, 4vw, 3.5rem);
-  font-weight: 600;
-  color: var(--charcoal);
-  letter-spacing: -0.02em;
-  line-height: 1.1;
-  margin-bottom: 1rem;
-  max-width: 640px;
-}
-
-.programs-sub {
-  font-size: 1.0625rem;
-  line-height: 1.75;
-  color: var(--charcoal-mid);
-  max-width: 560px;
-}
-
-/* =============================================
    CLASSROOM CARDS
    ============================================= */
 
@@ -70,7 +41,13 @@
   width: 100%;
   height: 100%;
   object-fit: cover;
+  object-position: center top;
   transition: transform 0.45s ease;
+}
+
+/* Little Rainbow image focal point differs from the center-top default */
+.classroom-card:first-child .classroom-card-image img {
+  object-position: center 30%;
 }
 
 .classroom-card:hover .classroom-card-image img {
@@ -333,10 +310,7 @@
 }
 
 .day-inner {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
   gap: var(--sp-xl);
-  align-items: center;
 }
 
 .day-text .label {
@@ -378,7 +352,7 @@
 }
 
 .day-image-bottom img {
-  object-position: center 30%;
+  object-position: center bottom;
 }
 
 /* =============================================
@@ -401,10 +375,6 @@
 }
 
 @media (max-width: 860px) {
-  .programs-header {
-    padding: var(--sp-lg) 0;
-  }
-
   .classroom-card-image {
     aspect-ratio: 16 / 9;
   }

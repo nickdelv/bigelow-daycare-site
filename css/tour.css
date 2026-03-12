@@ -3,35 +3,6 @@
    ============================================= */
 
 /* =============================================
-   PAGE HEADER
-   ============================================= */
-
-.tour-header {
-}
-
-.tour-header .label {
-  margin-bottom: 1rem;
-}
-
-.tour-heading {
-  font-family: var(--font-display);
-  font-size: clamp(2.25rem, 4vw, 3.5rem);
-  font-weight: 600;
-  color: var(--charcoal);
-  letter-spacing: -0.02em;
-  line-height: 1.1;
-  margin-bottom: 1rem;
-  max-width: 620px;
-}
-
-.tour-sub {
-  font-size: 1.0625rem;
-  line-height: 1.75;
-  color: var(--charcoal-mid);
-  max-width: 560px;
-}
-
-/* =============================================
    MAIN CONTENT — FORM + INFO
    ============================================= */
 
@@ -396,10 +367,6 @@
   text-decoration: underline;
 }
 
-.info-address {
-  font-style: normal;
-}
-
 .info-map-link {
   display: inline-block;
   margin-top: 0.875rem;
@@ -421,10 +388,6 @@
 }
 
 @media (max-width: 860px) {
-  .tour-header {
-    padding: var(--sp-lg) 0;
-  }
-
   .tour-body {
     padding: var(--sp-lg) 0 var(--sp-xl);
   }

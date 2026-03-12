@@ -3,35 +3,6 @@
    ============================================= */
 
 /* =============================================
-   PAGE HEADER
-   ============================================= */
-
-.enrollment-header {
-}
-
-.enrollment-header .label {
-  margin-bottom: 1rem;
-}
-
-.enrollment-heading {
-  font-family: var(--font-display);
-  font-size: clamp(2.25rem, 4vw, 3.5rem);
-  font-weight: 600;
-  color: var(--charcoal);
-  letter-spacing: -0.02em;
-  line-height: 1.1;
-  margin-bottom: 1rem;
-  max-width: 640px;
-}
-
-.enrollment-sub {
-  font-size: 1.0625rem;
-  line-height: 1.75;
-  color: var(--charcoal-mid);
-  max-width: 560px;
-}
-
-/* =============================================
    SECTION SHARED
    ============================================= */
 
@@ -41,6 +12,10 @@
 
 .enrollment-section + .enrollment-section {
   border-top: 1px solid rgba(40, 40, 40, 0.07);
+}
+
+.enrollment-section .label {
+  margin-bottom: 0.75rem;
 }
 
 /* =============================================
@@ -159,6 +134,12 @@
   letter-spacing: -0.01em;
 }
 
+.tuition-table-heading h3 em {
+  font-weight: 300;
+  font-style: normal;
+  opacity: 0.7;
+}
+
 .tuition-table-heading p {
   font-size: 0.8125rem;
   color: rgba(255, 255, 255, 0.6);
@@ -251,6 +232,11 @@
    FINANCIAL ASSISTANCE
    ============================================= */
 
+.partner-text .text-link {
+  display: inline-block;
+  margin-top: 1rem;
+}
+
 /* =============================================
    FAQ — ACCORDION
    ============================================= */
@@ -268,6 +254,10 @@
 
 .faq-sidebar .section-body {
   margin-bottom: 1.5rem;
+}
+
+.faq-sidebar .btn {
+  margin-top: 1.5rem;
 }
 
 .faq-list {
@@ -342,10 +332,6 @@
 }
 
 @media (max-width: 860px) {
-  .enrollment-header {
-    padding: var(--sp-lg) 0;
-  }
-
   .enrollment-section {
     padding: var(--sp-lg) 0;
   }
@@ -377,10 +363,5 @@
   .tuition-table td {
     padding: 0.625rem 0.875rem;
     font-size: 0.8125rem;
-  }
-
-  .enrollment-cta .cta-actions {
-    flex-direction: column;
-    align-items: center;
   }
 }
