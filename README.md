@@ -15,35 +15,37 @@ Static HTML, CSS, and JavaScript. No build step, no framework, no dependencies. 
 
 ## Repo structure
 
+```text
 /
-├── index.html # Home  
-├── about.html  
-├── programs.html  
-├── enrollment.html  
-├── schedule-a-tour.html  
+├── index.html                 # Home
+├── about.html
+├── programs.html
+├── enrollment.html
+├── schedule-a-tour.html
 │
 ├── components/
-│ ├── header.html # Nav + announcement banner (injected via JS)
-│ └── footer.html # Site footer (injected via JS)
+│   ├── header.html            # Nav + announcement banner (injected via JS)
+│   └── footer.html            # Site footer (injected via JS)
 │
 ├── css/
-│ ├── shared.css # Tokens, reset, nav, footer, buttons, shared patterns
-│ ├── index.css
-│ ├── about.css
-│ ├── programs.css
-│ ├── enrollment.css
-│ └── tour.css # Styles for schedule-a-tour.html
+│   ├── shared.css             # Tokens, reset, nav, footer, buttons, shared patterns
+│   ├── index.css
+│   ├── about.css
+│   ├── programs.css
+│   ├── enrollment.css
+│   └── tour.css               # Styles for schedule-a-tour.html
 │
 ├── js/
-│ └── site.js # Component injection, nav, form, carousel, tabs, FAQ
+│   └── site.js                # Component injection, nav, form, carousel, tabs, FAQ
 │
 ├── assets/
-│ ├── favicon.ico
-│ ├── favicon_32.png
-│ ├── apple-touch-icon.png
-│ └── images/
+│   ├── favicon.ico
+│   ├── favicon_32.png
+│   ├── apple-touch-icon.png
+│   └── images/
 │
-└── docs/ # Architecture and design system documentation
+└── docs/                      # Architecture and design system documentation
+```
 
 ---
 
