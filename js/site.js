@@ -25,12 +25,16 @@
     });
   }
 
-  injectComponent("#site-nav-placeholder", "nav.html", function () {
-    markCurrentPage();
-    initNav();
-  });
+  injectComponent(
+    "#site-nav-placeholder",
+    "components/header.html",
+    function () {
+      markCurrentPage();
+      initNav();
+    },
+  );
 
-  injectComponent("#site-footer-placeholder", "footer.html");
+  injectComponent("#site-footer-placeholder", "components/footer.html");
 })();
 
 /* --- Mobile nav hamburger --- */
