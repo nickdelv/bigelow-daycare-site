@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://bigelowcoop.org/sitemap.xml
