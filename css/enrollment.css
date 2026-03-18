@@ -99,7 +99,7 @@
 }
 
 .tuition-year {
-  font-size: 0.8125rem;
+  font-size: 0.875rem;
   font-weight: 600;
   letter-spacing: 0.08em;
   text-transform: uppercase;
@@ -203,14 +203,14 @@
 }
 
 .tuition-table .classroom-ages {
-  font-size: 0.8125rem;
+  font-size: 0.875rem;
   color: var(--charcoal-light);
   font-weight: 400;
 }
 
 .tuition-table .na {
   color: var(--charcoal-light);
-  font-size: 0.8125rem;
+  font-size: 0.875rem;
 }
 
 .tuition-terms {

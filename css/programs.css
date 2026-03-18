@@ -79,7 +79,7 @@
 }
 
 .badge-unit {
-  font-size: 0.6875rem;
+  font-size: 0.75rem;
   font-weight: 400;
   letter-spacing: 0;
   margin-left: 0.075em;
@@ -207,7 +207,7 @@
 }
 
 .tab-ages {
-  font-size: 0.75rem;
+  font-size: 0.875rem;
   font-weight: 400;
   color: var(--charcoal-light);
   transition: color 0.2s;
@@ -242,7 +242,7 @@
 }
 
 .schedule-note {
-  font-size: 0.8125rem;
+  font-size: 0.875rem;
   color: var(--charcoal-light);
   font-style: italic;
   margin-bottom: 1.5rem;
@@ -285,7 +285,7 @@
 }
 
 .sched-time {
-  font-size: 0.8125rem;
+  font-size: 0.875rem;
   font-weight: 600;
   color: var(--charcoal-light);
   letter-spacing: 0.01em;

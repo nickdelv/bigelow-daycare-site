@@ -158,7 +158,7 @@
 }
 
 .form-note {
-  font-size: 0.8125rem;
+  font-size: 0.875rem;
   color: var(--charcoal-mid);
   line-height: 1.5;
 }
@@ -254,7 +254,7 @@
 
 .form-success-eyebrow {
   font-family: var(--font-body);
-  font-size: 0.6875rem;
+  font-size: 0.75rem;
   font-weight: 600;
   letter-spacing: 0.2em;
   text-transform: uppercase;
