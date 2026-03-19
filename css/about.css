@@ -73,10 +73,11 @@
 
 /* =============================================
    LAST-OF-TYPE OVERRIDES
-   Philosophy section has no text-link following
+   Story and philosophy sections have no text-link following
    the body wrap — suppress shared.css bottom margin
    ============================================= */
 
+.story-section .section-body-wrap p:last-of-type,
 .philosophy-section .section-body-wrap p:last-of-type {
   margin-bottom: 0;
 }

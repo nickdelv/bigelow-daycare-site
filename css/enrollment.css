@@ -7,7 +7,7 @@
    ============================================= */
 
 .enrollment-section {
-  padding: var(--sp-xl) 0;
+  padding: var(--sp-2xl) 0;
 }
 
 .enrollment-section + .enrollment-section {
@@ -332,10 +332,6 @@
 }
 
 @media (max-width: 860px) {
-  .enrollment-section {
-    padding: var(--sp-lg) 0;
-  }
-
   .steps-grid {
     grid-template-columns: 1fr;
     gap: 1.5px;
@@ -344,6 +340,10 @@
 
   .step-card {
     padding: 1.25rem 1.75rem 2rem;
+  }
+
+  .step-card:last-child {
+    padding-bottom: 0;
   }
 
   .faq-grid {
