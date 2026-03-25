@@ -7,6 +7,9 @@
   form.addEventListener("submit", function (e) {
     e.preventDefault();
 
+    // Honeypot
+    if (document.getElementById("website").value) return;
+
     if (!form.checkValidity()) {
       form.reportValidity();
       return;

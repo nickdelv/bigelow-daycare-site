@@ -22,21 +22,26 @@ Static HTML, CSS, and JavaScript. No build step, no framework, no dependencies. 
 ├── programs.html
 ├── enrollment.html
 ├── schedule-a-tour.html
+├── apply.html                 # Online application form
 │
 ├── components/
 │   ├── header.html            # Nav + announcement banner (injected via JS)
 │   └── footer.html            # Site footer (injected via JS)
 │
 ├── css/
-│   ├── shared.css             # Tokens, reset, nav, footer, buttons, shared patterns
+│   ├── shared.css             # Tokens, reset, nav, footer, buttons, shared patterns,
+│   │                          #   form styles, and info-block sidebar styles
 │   ├── index.css
 │   ├── about.css
 │   ├── programs.css
 │   ├── enrollment.css
-│   └── tour.css               # Styles for schedule-a-tour.html
+│   ├── tour.css               # Layout for schedule-a-tour.html
+│   └── application.css        # Layout for apply.html
 │
 ├── js/
-│   └── site.js                # Component injection, nav, form, carousel, tabs, FAQ
+│   ├── site.js                # Component injection, nav, carousel, tabs, FAQ
+│   ├── tour.js                # Tour form submission
+│   └── application.js         # Application form submission
 │
 ├── assets/
 │   ├── favicon.ico
@@ -69,7 +74,7 @@ python3 -m http.server 8000
 
 ## CSS architecture
 
-`shared.css` owns the global system: design tokens, reset, typography, buttons, nav, footer, CTA styles, section headings, partner blocks, and the shared page-header pattern.
+`shared.css` owns the global system: design tokens, reset, typography, buttons, nav, footer, CTA styles, section headings, partner blocks, the shared page-header pattern, all form field styles (`.form-group`, `.form-row`, `.checkbox-label`, validation states, success state, etc.), and the info-block sidebar pattern.
 
 Page CSS files are additive and page-specific: they contain layout and components unique to that page, while shared patterns stay in `shared.css`.
 

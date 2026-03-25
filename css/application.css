@@ -1,0 +1,246 @@
+/* =============================================
+   BIGELOW COOPERATIVE — APPLICATION PAGE
+   application.css
+   ============================================= */
+
+/* =============================================
+   MAIN LAYOUT
+   ============================================= */
+
+.app-body {
+  padding: var(--sp-xl) 0 var(--sp-2xl);
+}
+
+.app-grid {
+  display: grid;
+  grid-template-columns: 1fr 320px;
+  gap: 4rem;
+  align-items: start;
+}
+
+/* =============================================
+   FORM CARD
+   ============================================= */
+
+.app-form-section {
+  background: var(--white);
+  border-radius: var(--r-2xl);
+  padding: 2.5rem;
+  box-shadow: 0 2px 16px rgba(40, 40, 40, 0.06);
+}
+
+/* Section headings within the form */
+.form-section-heading {
+  font-family: var(--font-body);
+  font-size: 0.8125rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--terracotta);
+  margin-bottom: 1.25rem;
+  display: flex;
+  align-items: baseline;
+  gap: 0.5rem;
+}
+
+.form-section-heading .optional {
+  font-weight: 400;
+  font-size: 0.75rem;
+  letter-spacing: 0.04em;
+  text-transform: none;
+  color: var(--charcoal-light);
+}
+
+.form-section-heading .req {
+  color: var(--terracotta);
+  margin-left: 0.125rem;
+}
+
+.form-section-note {
+  font-size: 0.875rem;
+  color: var(--charcoal-mid);
+  line-height: 1.6;
+  margin-top: -0.75rem;
+  margin-bottom: 1.25rem;
+}
+
+/* =============================================
+   FORM FIELDS — APPLICATION ADDITIONS
+   ============================================= */
+
+/* date input */
+.form-group input[type="date"] {
+  cursor: pointer;
+}
+
+/* =============================================
+   CHECKBOXES + RADIOS — APPLICATION ADDITIONS
+   ============================================= */
+
+.checkbox-group--vertical {
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.radio-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  margin-top: 0.25rem;
+}
+
+.radio-label {
+  display: flex;
+  align-items: center;
+  gap: 0.625rem;
+  font-size: 0.9375rem;
+  color: var(--charcoal);
+  cursor: pointer;
+  user-select: none;
+}
+
+.radio-label input[type="radio"] {
+  width: 1.125rem;
+  height: 1.125rem;
+  min-width: 1.125rem;
+  cursor: pointer;
+  accent-color: var(--terracotta);
+  margin: 0;
+}
+
+/* Extended day — slightly larger treatment */
+.extended-day-label {
+  font-weight: 500;
+  padding: 0.875rem 1rem;
+  background: var(--cream);
+  border: 1.5px solid rgba(40, 40, 40, 0.12);
+  border-radius: var(--r-md);
+}
+
+/* =============================================
+   SIBLINGS GRID
+   ============================================= */
+
+.siblings-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+.sibling-row {
+  /* name col is wider, age col is narrow */
+  grid-template-columns: 1fr 80px;
+}
+
+.sibling-row .form-group {
+  margin-bottom: 1rem;
+}
+
+/* =============================================
+   APPLICATION FEE NOTE
+   ============================================= */
+
+.app-fee-note {
+  background: var(--terracotta-wash);
+  border-left: 3px solid var(--terracotta);
+  border-radius: 0 var(--r-md) var(--r-md) 0;
+  padding: 1rem 1.25rem;
+  font-size: 0.9rem;
+  color: var(--charcoal-mid);
+  line-height: 1.6;
+  margin-bottom: 1.75rem;
+}
+
+/* =============================================
+   SIDEBAR
+   ============================================= */
+
+.app-info {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.info-block--fee {
+  background: var(--terracotta-wash);
+  border: 1px solid rgba(192, 90, 66, 0.15);
+}
+
+.info-block-body {
+  font-size: 0.9rem;
+  color: var(--charcoal-mid);
+  line-height: 1.65;
+  margin-bottom: 0.625rem;
+}
+
+.info-block-body--note {
+  font-size: 0.8125rem;
+  color: var(--charcoal-light);
+  margin-bottom: 0;
+}
+
+.info-download-link {
+  display: inline-block;
+  margin-top: 0.75rem;
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: var(--terracotta);
+  text-decoration: none;
+}
+
+.info-download-link:hover {
+  text-decoration: underline;
+}
+
+/* =============================================
+   RESPONSIVE
+   ============================================= */
+
+@media (max-width: 1024px) {
+  .app-grid {
+    grid-template-columns: 1fr 280px;
+    gap: 3rem;
+  }
+}
+
+@media (max-width: 860px) {
+  .app-body {
+    padding: var(--sp-lg) 0 var(--sp-xl);
+  }
+
+  .app-grid {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+
+  .app-info {
+    position: static;
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+
+  .info-block {
+    flex: 1 1 260px;
+  }
+
+  .app-form-section {
+    padding: 1.75rem;
+  }
+}
+
+@media (max-width: 600px) {
+  /* Keep sibling rows two-column even on mobile */
+  .sibling-row {
+    grid-template-columns: 1fr 72px !important;
+    gap: 0.75rem;
+  }
+
+  .app-info {
+    flex-direction: column;
+  }
+
+  .info-block {
+    flex: 0 0 auto;
+    width: 100%;
+  }
+}
