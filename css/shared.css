@@ -882,6 +882,7 @@ address {
   justify-content: center;
   position: relative;
   overflow: hidden;
+  scroll-margin-top: calc(var(--nav-height) + 1.5rem);
 }
 
 .form-success::before {
