@@ -15,14 +15,6 @@
       day: "numeric",
     });
 
-  // ── DATE PICKER — open on click anywhere in field ─
-  var dobInput = document.getElementById("childDob");
-  dobInput.addEventListener("click", function () {
-    try {
-      this.showPicker();
-    } catch (e) {}
-  });
-
   // ── "OTHER" REFERRAL REVEAL ──────────────────────
   document
     .getElementById("referralOther")
@@ -103,6 +95,7 @@
     var homeCity = form.querySelector("#homeCity");
     var homeZip = form.querySelector("#homeZip");
     var p1Name = form.querySelector("#p1Name");
+    var p1Cell = form.querySelector("#p1Cell");
     var p1Email = form.querySelector("#p1Email");
 
     // Clear all errors
@@ -113,6 +106,7 @@
       homeCity,
       homeZip,
       p1Name,
+      p1Cell,
       p1Email,
     ].forEach(clearError);
     clearGroupError(days1Group);
@@ -146,6 +140,11 @@
     if (!p1Name.value.trim()) {
       showError(p1Name, "Please enter a name.");
       if (!firstErrorEl) firstErrorEl = p1Name;
+      valid = false;
+    }
+    if (!p1Cell.value.trim()) {
+      showError(p1Cell, "Please enter a cell phone number.");
+      if (!firstErrorEl) firstErrorEl = p1Cell;
       valid = false;
     }
     if (!p1Email.value.trim()) {

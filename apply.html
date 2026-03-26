@@ -125,7 +125,6 @@
                     type="text"
                     id="homeCity"
                     name="homeCity"
-                    placeholder="City"
                     required
                     autocomplete="address-level2"
                   />
@@ -138,7 +137,7 @@
                     type="text"
                     id="homeZip"
                     name="homeZip"
-                    placeholder="02143"
+                    placeholder="00000"
                     required
                     autocomplete="postal-code"
                     inputmode="numeric"
@@ -311,15 +310,30 @@
 
               <div class="form-row">
                 <div class="form-group">
+                  <label for="p1Cell"
+                    >Cell phone <span class="req">*</span></label
+                  >
+                  <input
+                    type="tel"
+                    id="p1Cell"
+                    name="p1Cell"
+                    placeholder="617-555-0100"
+                    required
+                    autocomplete="tel"
+                  />
+                </div>
+                <div class="form-group">
                   <label for="p1HomePhone">Home phone</label>
                   <input
                     type="tel"
                     id="p1HomePhone"
                     name="p1HomePhone"
                     placeholder="617-555-0100"
-                    autocomplete="tel"
                   />
                 </div>
+              </div>
+
+              <div class="form-row">
                 <div class="form-group">
                   <label for="p1WorkPhone">Work phone</label>
                   <input
@@ -329,9 +343,6 @@
                     placeholder="617-555-0100"
                   />
                 </div>
-              </div>
-
-              <div class="form-row">
                 <div class="form-group">
                   <label for="p1Email">Email <span class="req">*</span></label>
                   <input
@@ -341,17 +352,6 @@
                     placeholder="you@example.com"
                     required
                     autocomplete="email"
-                  />
-                </div>
-                <div class="form-group">
-                  <label for="p1Cell"
-                    >Cell phone <span class="optional">(optional)</span></label
-                  >
-                  <input
-                    type="tel"
-                    id="p1Cell"
-                    name="p1Cell"
-                    placeholder="617-555-0100"
                   />
                 </div>
               </div>
@@ -404,6 +404,15 @@
 
               <div class="form-row">
                 <div class="form-group">
+                  <label for="p2Cell">Cell phone</label>
+                  <input
+                    type="tel"
+                    id="p2Cell"
+                    name="p2Cell"
+                    placeholder="617-555-0100"
+                  />
+                </div>
+                <div class="form-group">
                   <label for="p2HomePhone">Home phone</label>
                   <input
                     type="tel"
@@ -412,6 +421,9 @@
                     placeholder="617-555-0100"
                   />
                 </div>
+              </div>
+
+              <div class="form-row">
                 <div class="form-group">
                   <label for="p2WorkPhone">Work phone</label>
                   <input
@@ -421,9 +433,6 @@
                     placeholder="617-555-0100"
                   />
                 </div>
-              </div>
-
-              <div class="form-row">
                 <div class="form-group">
                   <label for="p2Email">Email</label>
                   <input
@@ -431,17 +440,6 @@
                     id="p2Email"
                     name="p2Email"
                     placeholder="you@example.com"
-                  />
-                </div>
-                <div class="form-group">
-                  <label for="p2Cell"
-                    >Cell phone <span class="optional">(optional)</span></label
-                  >
-                  <input
-                    type="tel"
-                    id="p2Cell"
-                    name="p2Cell"
-                    placeholder="617-555-0100"
                   />
                 </div>
               </div>
@@ -524,8 +522,10 @@
               <hr class="form-divider" />
 
               <!-- ── PAYMENT TYPE ── -->
+              <h3 class="form-section-heading">
+                Payment type <span class="req">*</span>
+              </h3>
               <div class="form-group">
-                <label>I/we am/are a <span class="req">*</span></label>
                 <div class="radio-group">
                   <label class="radio-label">
                     <input
@@ -589,8 +589,8 @@
               <hr class="form-divider" />
 
               <!-- ── HOW DID YOU HEAR ── -->
+              <h3 class="form-section-heading">How did you hear about us?</h3>
               <div class="form-group">
-                <label>How did you hear about Bigelow?</label>
                 <div class="checkbox-group checkbox-group--vertical">
                   <label class="checkbox-label"
                     ><input
