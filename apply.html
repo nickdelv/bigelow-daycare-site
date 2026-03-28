@@ -149,110 +149,175 @@
               <hr class="form-divider" />
 
               <!-- ── PREFERRED SCHEDULE ── -->
-              <h3 class="form-section-heading">Preferred schedule</h3>
+              <h3 class="form-section-heading">
+                Preferred schedule <span class="req">*</span>
+              </h3>
               <p class="form-section-note">
-                Core day is 8:30am–3:30pm. If you need fewer than 5 days, your
-                schedule must include a Monday or Friday.
+                All days begin at 8:30 am. For each day your child will attend,
+                choose a pickup time — 3:30 pm or 5:30 pm. Schedules of fewer
+                than 5 days must include a Monday or Friday.
               </p>
 
-              <div class="form-group">
-                <label>1st choice days <span class="req">*</span></label>
-                <div class="checkbox-group">
-                  <label class="checkbox-label"
-                    ><input type="checkbox" name="days1" value="Monday" />
-                    Monday</label
-                  >
-                  <label class="checkbox-label"
-                    ><input type="checkbox" name="days1" value="Tuesday" />
-                    Tuesday</label
-                  >
-                  <label class="checkbox-label"
-                    ><input type="checkbox" name="days1" value="Wednesday" />
-                    Wednesday</label
-                  >
-                  <label class="checkbox-label"
-                    ><input type="checkbox" name="days1" value="Thursday" />
-                    Thursday</label
-                  >
-                  <label class="checkbox-label"
-                    ><input type="checkbox" name="days1" value="Friday" />
-                    Friday</label
-                  >
+              <div class="form-group" id="scheduleDaysGroup">
+                <div class="schedule-days">
+                  <div class="schedule-day-row">
+                    <label class="checkbox-label schedule-day-label">
+                      <input
+                        type="checkbox"
+                        class="schedule-day-cb"
+                        id="day-mon"
+                        name="dayMon"
+                      />
+                      <span class="schedule-day-name">Monday</span>
+                    </label>
+                    <div class="schedule-time-opts">
+                      <label class="radio-label">
+                        <input
+                          type="radio"
+                          name="time-mon"
+                          value="3:30"
+                          disabled
+                        />
+                        <span>3:30 pm</span>
+                      </label>
+                      <label class="radio-label">
+                        <input
+                          type="radio"
+                          name="time-mon"
+                          value="5:30"
+                          disabled
+                        />
+                        <span>5:30 pm</span>
+                      </label>
+                    </div>
+                  </div>
+                  <div class="schedule-day-row">
+                    <label class="checkbox-label schedule-day-label">
+                      <input
+                        type="checkbox"
+                        class="schedule-day-cb"
+                        id="day-tue"
+                        name="dayTue"
+                      />
+                      <span class="schedule-day-name">Tuesday</span>
+                    </label>
+                    <div class="schedule-time-opts">
+                      <label class="radio-label">
+                        <input
+                          type="radio"
+                          name="time-tue"
+                          value="3:30"
+                          disabled
+                        />
+                        <span>3:30 pm</span>
+                      </label>
+                      <label class="radio-label">
+                        <input
+                          type="radio"
+                          name="time-tue"
+                          value="5:30"
+                          disabled
+                        />
+                        <span>5:30 pm</span>
+                      </label>
+                    </div>
+                  </div>
+                  <div class="schedule-day-row">
+                    <label class="checkbox-label schedule-day-label">
+                      <input
+                        type="checkbox"
+                        class="schedule-day-cb"
+                        id="day-wed"
+                        name="dayWed"
+                      />
+                      <span class="schedule-day-name">Wednesday</span>
+                    </label>
+                    <div class="schedule-time-opts">
+                      <label class="radio-label">
+                        <input
+                          type="radio"
+                          name="time-wed"
+                          value="3:30"
+                          disabled
+                        />
+                        <span>3:30 pm</span>
+                      </label>
+                      <label class="radio-label">
+                        <input
+                          type="radio"
+                          name="time-wed"
+                          value="5:30"
+                          disabled
+                        />
+                        <span>5:30 pm</span>
+                      </label>
+                    </div>
+                  </div>
+                  <div class="schedule-day-row">
+                    <label class="checkbox-label schedule-day-label">
+                      <input
+                        type="checkbox"
+                        class="schedule-day-cb"
+                        id="day-thu"
+                        name="dayThu"
+                      />
+                      <span class="schedule-day-name">Thursday</span>
+                    </label>
+                    <div class="schedule-time-opts">
+                      <label class="radio-label">
+                        <input
+                          type="radio"
+                          name="time-thu"
+                          value="3:30"
+                          disabled
+                        />
+                        <span>3:30 pm</span>
+                      </label>
+                      <label class="radio-label">
+                        <input
+                          type="radio"
+                          name="time-thu"
+                          value="5:30"
+                          disabled
+                        />
+                        <span>5:30 pm</span>
+                      </label>
+                    </div>
+                  </div>
+                  <div class="schedule-day-row">
+                    <label class="checkbox-label schedule-day-label">
+                      <input
+                        type="checkbox"
+                        class="schedule-day-cb"
+                        id="day-fri"
+                        name="dayFri"
+                      />
+                      <span class="schedule-day-name">Friday</span>
+                    </label>
+                    <div class="schedule-time-opts">
+                      <label class="radio-label">
+                        <input
+                          type="radio"
+                          name="time-fri"
+                          value="3:30"
+                          disabled
+                        />
+                        <span>3:30 pm</span>
+                      </label>
+                      <label class="radio-label">
+                        <input
+                          type="radio"
+                          name="time-fri"
+                          value="5:30"
+                          disabled
+                        />
+                        <span>5:30 pm</span>
+                      </label>
+                    </div>
+                  </div>
                 </div>
               </div>
-              <input type="hidden" id="days1-hidden" name="days1Combined" />
-
-              <div class="form-group">
-                <label
-                  >2nd choice days
-                  <span class="optional">(optional)</span></label
-                >
-                <div class="checkbox-group">
-                  <label class="checkbox-label"
-                    ><input type="checkbox" name="days2" value="Monday" />
-                    Monday</label
-                  >
-                  <label class="checkbox-label"
-                    ><input type="checkbox" name="days2" value="Tuesday" />
-                    Tuesday</label
-                  >
-                  <label class="checkbox-label"
-                    ><input type="checkbox" name="days2" value="Wednesday" />
-                    Wednesday</label
-                  >
-                  <label class="checkbox-label"
-                    ><input type="checkbox" name="days2" value="Thursday" />
-                    Thursday</label
-                  >
-                  <label class="checkbox-label"
-                    ><input type="checkbox" name="days2" value="Friday" />
-                    Friday</label
-                  >
-                </div>
-              </div>
-              <input type="hidden" id="days2-hidden" name="days2Combined" />
-
-              <div class="form-group">
-                <label
-                  >3rd choice days
-                  <span class="optional">(optional)</span></label
-                >
-                <div class="checkbox-group">
-                  <label class="checkbox-label"
-                    ><input type="checkbox" name="days3" value="Monday" />
-                    Monday</label
-                  >
-                  <label class="checkbox-label"
-                    ><input type="checkbox" name="days3" value="Tuesday" />
-                    Tuesday</label
-                  >
-                  <label class="checkbox-label"
-                    ><input type="checkbox" name="days3" value="Wednesday" />
-                    Wednesday</label
-                  >
-                  <label class="checkbox-label"
-                    ><input type="checkbox" name="days3" value="Thursday" />
-                    Thursday</label
-                  >
-                  <label class="checkbox-label"
-                    ><input type="checkbox" name="days3" value="Friday" />
-                    Friday</label
-                  >
-                </div>
-              </div>
-              <input type="hidden" id="days3-hidden" name="days3Combined" />
-
-              <div class="form-group">
-                <label class="checkbox-label extended-day-label">
-                  <input
-                    type="checkbox"
-                    name="extendedDay"
-                    id="extendedDay"
-                    value="yes"
-                  />
-                  <span>Add extended day (3:30–5:30pm)</span>
-                </label>
-              </div>
+              <input type="hidden" id="schedule-hidden" name="scheduleDays" />
 
               <hr class="form-divider" />
 
@@ -320,27 +385,6 @@
                     placeholder="617-555-0100"
                     required
                     autocomplete="tel"
-                  />
-                </div>
-                <div class="form-group">
-                  <label for="p1HomePhone">Home phone</label>
-                  <input
-                    type="tel"
-                    id="p1HomePhone"
-                    name="p1HomePhone"
-                    placeholder="617-555-0100"
-                  />
-                </div>
-              </div>
-
-              <div class="form-row">
-                <div class="form-group">
-                  <label for="p1WorkPhone">Work phone</label>
-                  <input
-                    type="tel"
-                    id="p1WorkPhone"
-                    name="p1WorkPhone"
-                    placeholder="617-555-0100"
                   />
                 </div>
                 <div class="form-group">
@@ -413,27 +457,6 @@
                   />
                 </div>
                 <div class="form-group">
-                  <label for="p2HomePhone">Home phone</label>
-                  <input
-                    type="tel"
-                    id="p2HomePhone"
-                    name="p2HomePhone"
-                    placeholder="617-555-0100"
-                  />
-                </div>
-              </div>
-
-              <div class="form-row">
-                <div class="form-group">
-                  <label for="p2WorkPhone">Work phone</label>
-                  <input
-                    type="tel"
-                    id="p2WorkPhone"
-                    name="p2WorkPhone"
-                    placeholder="617-555-0100"
-                  />
-                </div>
-                <div class="form-group">
                   <label for="p2Email">Email</label>
                   <input
                     type="email"
@@ -441,81 +464,6 @@
                     name="p2Email"
                     placeholder="you@example.com"
                   />
-                </div>
-              </div>
-
-              <hr class="form-divider" />
-
-              <!-- ── SIBLINGS ── -->
-              <h3 class="form-section-heading">
-                Siblings
-                <span class="optional">if applicable</span>
-              </h3>
-
-              <div class="siblings-grid">
-                <div class="form-row sibling-row">
-                  <div class="form-group">
-                    <label for="sib1Name">Sibling 1 name</label>
-                    <input type="text" id="sib1Name" name="sib1Name" />
-                  </div>
-                  <div class="form-group sibling-age">
-                    <label for="sib1Age">Age</label>
-                    <input
-                      type="text"
-                      id="sib1Age"
-                      name="sib1Age"
-                      inputmode="numeric"
-                      maxlength="3"
-                    />
-                  </div>
-                </div>
-                <div class="form-row sibling-row">
-                  <div class="form-group">
-                    <label for="sib2Name">Sibling 2 name</label>
-                    <input type="text" id="sib2Name" name="sib2Name" />
-                  </div>
-                  <div class="form-group sibling-age">
-                    <label for="sib2Age">Age</label>
-                    <input
-                      type="text"
-                      id="sib2Age"
-                      name="sib2Age"
-                      inputmode="numeric"
-                      maxlength="3"
-                    />
-                  </div>
-                </div>
-                <div class="form-row sibling-row">
-                  <div class="form-group">
-                    <label for="sib3Name">Sibling 3 name</label>
-                    <input type="text" id="sib3Name" name="sib3Name" />
-                  </div>
-                  <div class="form-group sibling-age">
-                    <label for="sib3Age">Age</label>
-                    <input
-                      type="text"
-                      id="sib3Age"
-                      name="sib3Age"
-                      inputmode="numeric"
-                      maxlength="3"
-                    />
-                  </div>
-                </div>
-                <div class="form-row sibling-row">
-                  <div class="form-group">
-                    <label for="sib4Name">Sibling 4 name</label>
-                    <input type="text" id="sib4Name" name="sib4Name" />
-                  </div>
-                  <div class="form-group sibling-age">
-                    <label for="sib4Age">Age</label>
-                    <input
-                      type="text"
-                      id="sib4Age"
-                      name="sib4Age"
-                      inputmode="numeric"
-                      maxlength="3"
-                    />
-                  </div>
                 </div>
               </div>
 

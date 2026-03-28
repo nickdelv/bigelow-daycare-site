@@ -108,32 +108,43 @@
   margin: 0;
 }
 
-/* Extended day — slightly larger treatment */
-.extended-day-label {
-  font-weight: 500;
-  padding: 0.875rem 1rem;
-  background: var(--cream);
-  border: 1.5px solid rgba(40, 40, 40, 0.12);
-  border-radius: var(--r-md);
-}
-
 /* =============================================
-   SIBLINGS GRID
+   PREFERRED SCHEDULE GRID
    ============================================= */
 
-.siblings-grid {
+.schedule-days {
   display: flex;
   flex-direction: column;
-  gap: 0;
 }
 
-.sibling-row {
-  /* name col is wider, age col is narrow */
-  grid-template-columns: 1fr 80px;
+.schedule-day-row {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  padding: 0.75rem 0;
+  border-bottom: 1px solid rgba(40, 40, 40, 0.08);
 }
 
-.sibling-row .form-group {
-  margin-bottom: 1rem;
+.schedule-day-row:last-child {
+  border-bottom: none;
+}
+
+.schedule-day-label {
+  min-width: 130px;
+}
+
+.schedule-day-name {
+  font-weight: 500;
+}
+
+.schedule-time-opts {
+  display: none;
+  align-items: center;
+  gap: 1.25rem;
+}
+
+.schedule-day-row.is-active .schedule-time-opts {
+  display: flex;
 }
 
 /* =============================================
@@ -229,12 +240,6 @@
 }
 
 @media (max-width: 600px) {
-  /* Keep sibling rows two-column even on mobile */
-  .sibling-row {
-    grid-template-columns: 1fr 72px !important;
-    gap: 0.75rem;
-  }
-
   .app-info {
     flex-direction: column;
   }

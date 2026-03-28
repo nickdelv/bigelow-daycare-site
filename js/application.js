@@ -25,6 +25,38 @@
         : "none";
     });
 
+  // ── SCHEDULE DAY TOGGLES ─────────────────────────
+  var DAYS = [
+    { id: "mon", abbr: "Mon" },
+    { id: "tue", abbr: "Tue" },
+    { id: "wed", abbr: "Wed" },
+    { id: "thu", abbr: "Thu" },
+    { id: "fri", abbr: "Fri" },
+  ];
+
+  DAYS.forEach(function (day) {
+    var cb = document.getElementById("day-" + day.id);
+    var row = cb.closest(".schedule-day-row");
+    var radios = row.querySelectorAll('input[type="radio"]');
+
+    cb.addEventListener("change", function () {
+      if (this.checked) {
+        row.classList.add("is-active");
+        radios.forEach(function (r) {
+          r.disabled = false;
+        });
+        // Default to 5:30
+        row.querySelector('input[value="5:30"]').checked = true;
+      } else {
+        row.classList.remove("is-active");
+        radios.forEach(function (r) {
+          r.disabled = true;
+          r.checked = false;
+        });
+      }
+    });
+  });
+
   // ── VALIDATION HELPERS ───────────────────────────
   function showError(input, msg) {
     input.classList.add("is-invalid");
@@ -56,9 +88,7 @@
     if (err) err.remove();
   }
 
-  var days1Group = form
-    .querySelector('input[name="days1"]')
-    .closest(".form-group");
+  var scheduleDaysGroup = document.getElementById("scheduleDaysGroup");
   var paymentGroup = form
     .querySelector('input[name="paymentType"]')
     .closest(".form-group");
@@ -73,9 +103,9 @@
         clearError(el);
       });
     });
-  form.querySelectorAll('input[name="days1"]').forEach(function (cb) {
+  form.querySelectorAll(".schedule-day-cb").forEach(function (cb) {
     cb.addEventListener("change", function () {
-      clearGroupError(days1Group);
+      clearGroupError(scheduleDaysGroup);
     });
   });
   form.querySelectorAll('input[name="paymentType"]').forEach(function (r) {
@@ -109,7 +139,7 @@
       p1Cell,
       p1Email,
     ].forEach(clearError);
-    clearGroupError(days1Group);
+    clearGroupError(scheduleDaysGroup);
     clearGroupError(paymentGroup);
 
     if (!childName.value.trim()) {
@@ -163,24 +193,26 @@
       valid = false;
     }
 
-    var days1checked = form.querySelectorAll('input[name="days1"]:checked');
-    if (days1checked.length === 0) {
-      showGroupError(days1Group, "Please select at least one preferred day.");
-      if (!firstErrorEl) firstErrorEl = days1Group;
+    var checkedDays = Array.from(
+      form.querySelectorAll(".schedule-day-cb:checked"),
+    );
+    if (checkedDays.length === 0) {
+      showGroupError(scheduleDaysGroup, "Please select at least one day.");
+      if (!firstErrorEl) firstErrorEl = scheduleDaysGroup;
       valid = false;
-    } else if (days1checked.length < 5) {
-      var days1values = Array.from(days1checked).map(function (cb) {
-        return cb.value;
+    } else if (checkedDays.length < 5) {
+      var checkedIds = checkedDays.map(function (cb) {
+        return cb.id;
       });
       if (
-        days1values.indexOf("Monday") === -1 &&
-        days1values.indexOf("Friday") === -1
+        checkedIds.indexOf("day-mon") === -1 &&
+        checkedIds.indexOf("day-fri") === -1
       ) {
         showGroupError(
-          days1Group,
+          scheduleDaysGroup,
           "Schedules of fewer than 5 days must include a Monday or Friday.",
         );
-        if (!firstErrorEl) firstErrorEl = days1Group;
+        if (!firstErrorEl) firstErrorEl = scheduleDaysGroup;
         valid = false;
       }
     }
@@ -201,27 +233,40 @@
 
     if (!validate()) return;
 
-    // Consolidate checkbox groups into hidden fields, then disable
-    // the raw checkboxes so FormData doesn't double-submit them
-    [
-      { name: "days1", hiddenId: "days1-hidden" },
-      { name: "days2", hiddenId: "days2-hidden" },
-      { name: "days3", hiddenId: "days3-hidden" },
-      { name: "referral", hiddenId: "referral-hidden" },
-    ].forEach(function (group) {
-      var checked = Array.from(
-        document.querySelectorAll('input[name="' + group.name + '"]:checked'),
-      ).map(function (cb) {
-        return cb.value;
+    // Build schedule string: "Mon (5:30), Wed (3:30), Fri (5:30)"
+    var schedParts = [];
+    DAYS.forEach(function (day) {
+      var cb = document.getElementById("day-" + day.id);
+      if (cb.checked) {
+        var timeRadio = form.querySelector(
+          'input[name="time-' + day.id + '"]:checked',
+        );
+        schedParts.push(
+          day.abbr + " (" + (timeRadio ? timeRadio.value : "") + ")",
+        );
+      }
+    });
+    document.getElementById("schedule-hidden").value = schedParts.join(", ");
+
+    // Disable raw schedule inputs so FormData doesn't include them
+    form
+      .querySelectorAll(
+        ".schedule-day-cb, .schedule-day-row input[type='radio']",
+      )
+      .forEach(function (el) {
+        el.disabled = true;
       });
 
-      document.getElementById(group.hiddenId).value = checked.join(", ");
-
-      document
-        .querySelectorAll('input[name="' + group.name + '"]')
-        .forEach(function (cb) {
-          cb.disabled = true;
-        });
+    // Consolidate referral checkboxes into hidden field, then disable
+    var referralChecked = Array.from(
+      document.querySelectorAll('input[name="referral"]:checked'),
+    ).map(function (cb) {
+      return cb.value;
+    });
+    document.getElementById("referral-hidden").value =
+      referralChecked.join(", ");
+    document.querySelectorAll('input[name="referral"]').forEach(function (cb) {
+      cb.disabled = true;
     });
 
     var btn = document.getElementById("submitBtn");
