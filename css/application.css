@@ -129,6 +129,23 @@
   border-bottom: none;
 }
 
+.schedule-choice-label {
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: var(--charcoal);
+  letter-spacing: 0.01em;
+  margin-bottom: 0.5rem;
+}
+
+.schedule-choice-label .req {
+  color: var(--terracotta);
+  margin-left: 0.125rem;
+}
+
+.schedule-choice-group {
+  margin-top: 1rem;
+}
+
 .schedule-day-label {
   min-width: 130px;
 }

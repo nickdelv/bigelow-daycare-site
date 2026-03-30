@@ -34,26 +34,34 @@
     { id: "fri", abbr: "Fri" },
   ];
 
-  DAYS.forEach(function (day) {
-    var cb = document.getElementById("day-" + day.id);
-    var row = cb.closest(".schedule-day-row");
-    var radios = row.querySelectorAll('input[type="radio"]');
+  var SCHEDULE_GROUPS = [
+    { num: 1, hiddenId: "schedule1-hidden" },
+    { num: 2, hiddenId: "schedule2-hidden" },
+    { num: 3, hiddenId: "schedule3-hidden" },
+  ];
 
-    cb.addEventListener("change", function () {
-      if (this.checked) {
-        row.classList.add("is-active");
-        radios.forEach(function (r) {
-          r.disabled = false;
-        });
-        // Default to 5:30
-        row.querySelector('input[value="5:30"]').checked = true;
-      } else {
-        row.classList.remove("is-active");
-        radios.forEach(function (r) {
-          r.disabled = true;
-          r.checked = false;
-        });
-      }
+  SCHEDULE_GROUPS.forEach(function (group) {
+    DAYS.forEach(function (day) {
+      var cb = document.getElementById("day-" + group.num + "-" + day.id);
+      if (!cb) return;
+      var row = cb.closest(".schedule-day-row");
+      var radios = row.querySelectorAll('input[type="radio"]');
+
+      cb.addEventListener("change", function () {
+        if (this.checked) {
+          row.classList.add("is-active");
+          radios.forEach(function (r) {
+            r.disabled = false;
+          });
+          row.querySelector('input[value="5:30"]').checked = true;
+        } else {
+          row.classList.remove("is-active");
+          radios.forEach(function (r) {
+            r.disabled = true;
+            r.checked = false;
+          });
+        }
+      });
     });
   });
 
@@ -103,11 +111,13 @@
         clearError(el);
       });
     });
-  form.querySelectorAll(".schedule-day-cb").forEach(function (cb) {
-    cb.addEventListener("change", function () {
-      clearGroupError(scheduleDaysGroup);
+  form
+    .querySelectorAll('.schedule-day-cb[data-group="1"]')
+    .forEach(function (cb) {
+      cb.addEventListener("change", function () {
+        clearGroupError(scheduleDaysGroup);
+      });
     });
-  });
   form.querySelectorAll('input[name="paymentType"]').forEach(function (r) {
     r.addEventListener("change", function () {
       clearGroupError(paymentGroup);
@@ -193,20 +203,21 @@
       valid = false;
     }
 
-    var checkedDays = Array.from(
-      form.querySelectorAll(".schedule-day-cb:checked"),
+    // Validate 1st choice only (required)
+    var checkedDays1 = Array.from(
+      form.querySelectorAll('.schedule-day-cb[data-group="1"]:checked'),
     );
-    if (checkedDays.length === 0) {
+    if (checkedDays1.length === 0) {
       showGroupError(scheduleDaysGroup, "Please select at least one day.");
       if (!firstErrorEl) firstErrorEl = scheduleDaysGroup;
       valid = false;
-    } else if (checkedDays.length < 5) {
-      var checkedIds = checkedDays.map(function (cb) {
+    } else if (checkedDays1.length < 5) {
+      var ids1 = checkedDays1.map(function (cb) {
         return cb.id;
       });
       if (
-        checkedIds.indexOf("day-mon") === -1 &&
-        checkedIds.indexOf("day-fri") === -1
+        ids1.indexOf("day-1-mon") === -1 &&
+        ids1.indexOf("day-1-fri") === -1
       ) {
         showGroupError(
           scheduleDaysGroup,
@@ -233,20 +244,22 @@
 
     if (!validate()) return;
 
-    // Build schedule string: "Mon (5:30), Wed (3:30), Fri (5:30)"
-    var schedParts = [];
-    DAYS.forEach(function (day) {
-      var cb = document.getElementById("day-" + day.id);
-      if (cb.checked) {
-        var timeRadio = form.querySelector(
-          'input[name="time-' + day.id + '"]:checked',
-        );
-        schedParts.push(
-          day.abbr + " (" + (timeRadio ? timeRadio.value : "") + ")",
-        );
-      }
+    // Build schedule strings for all 3 groups
+    SCHEDULE_GROUPS.forEach(function (group) {
+      var parts = [];
+      DAYS.forEach(function (day) {
+        var cb = document.getElementById("day-" + group.num + "-" + day.id);
+        if (cb && cb.checked) {
+          var timeRadio = form.querySelector(
+            'input[name="time-' + group.num + "-" + day.id + '"]:checked',
+          );
+          parts.push(
+            day.abbr + " (" + (timeRadio ? timeRadio.value : "") + ")",
+          );
+        }
+      });
+      document.getElementById(group.hiddenId).value = parts.join(", ");
     });
-    document.getElementById("schedule-hidden").value = schedParts.join(", ");
 
     // Disable raw schedule inputs so FormData doesn't include them
     form

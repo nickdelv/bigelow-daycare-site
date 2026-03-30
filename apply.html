@@ -32,8 +32,8 @@
     />
     <link rel="apple-touch-icon" href="assets/apple-touch-icon.png" />
     <link rel="canonical" href="https://bigelowcoop.org/apply.html" />
-    <link rel="stylesheet" href="css/shared.css?v=1.4" />
-    <link rel="stylesheet" href="css/application.css?v=1.4" />
+    <link rel="stylesheet" href="css/shared.css?v=1.5" />
+    <link rel="stylesheet" href="css/application.css?v=1.5" />
   </head>
   <body>
     <div id="site-nav-placeholder"></div>
@@ -149,24 +149,27 @@
               <hr class="form-divider" />
 
               <!-- ── PREFERRED SCHEDULE ── -->
-              <h3 class="form-section-heading">
-                Preferred schedule <span class="req">*</span>
-              </h3>
+              <h3 class="form-section-heading">Preferred schedule</h3>
               <p class="form-section-note">
                 All days begin at 8:30 am. For each day your child will attend,
                 choose a pickup time — 3:30 pm or 5:30 pm. Schedules of fewer
                 than 5 days must include a Monday or Friday.
               </p>
 
+              <!-- 1st choice -->
               <div class="form-group" id="scheduleDaysGroup">
+                <p class="schedule-choice-label">
+                  1st choice days <span class="req">*</span>
+                </p>
                 <div class="schedule-days">
                   <div class="schedule-day-row">
                     <label class="checkbox-label schedule-day-label">
                       <input
                         type="checkbox"
                         class="schedule-day-cb"
-                        id="day-mon"
-                        name="dayMon"
+                        data-group="1"
+                        id="day-1-mon"
+                        name="day1Mon"
                       />
                       <span class="schedule-day-name">Monday</span>
                     </label>
@@ -174,7 +177,7 @@
                       <label class="radio-label">
                         <input
                           type="radio"
-                          name="time-mon"
+                          name="time-1-mon"
                           value="3:30"
                           disabled
                         />
@@ -183,7 +186,7 @@
                       <label class="radio-label">
                         <input
                           type="radio"
-                          name="time-mon"
+                          name="time-1-mon"
                           value="5:30"
                           disabled
                         />
@@ -196,8 +199,9 @@
                       <input
                         type="checkbox"
                         class="schedule-day-cb"
-                        id="day-tue"
-                        name="dayTue"
+                        data-group="1"
+                        id="day-1-tue"
+                        name="day1Tue"
                       />
                       <span class="schedule-day-name">Tuesday</span>
                     </label>
@@ -205,7 +209,7 @@
                       <label class="radio-label">
                         <input
                           type="radio"
-                          name="time-tue"
+                          name="time-1-tue"
                           value="3:30"
                           disabled
                         />
@@ -214,7 +218,7 @@
                       <label class="radio-label">
                         <input
                           type="radio"
-                          name="time-tue"
+                          name="time-1-tue"
                           value="5:30"
                           disabled
                         />
@@ -227,8 +231,9 @@
                       <input
                         type="checkbox"
                         class="schedule-day-cb"
-                        id="day-wed"
-                        name="dayWed"
+                        data-group="1"
+                        id="day-1-wed"
+                        name="day1Wed"
                       />
                       <span class="schedule-day-name">Wednesday</span>
                     </label>
@@ -236,7 +241,7 @@
                       <label class="radio-label">
                         <input
                           type="radio"
-                          name="time-wed"
+                          name="time-1-wed"
                           value="3:30"
                           disabled
                         />
@@ -245,7 +250,7 @@
                       <label class="radio-label">
                         <input
                           type="radio"
-                          name="time-wed"
+                          name="time-1-wed"
                           value="5:30"
                           disabled
                         />
@@ -258,8 +263,9 @@
                       <input
                         type="checkbox"
                         class="schedule-day-cb"
-                        id="day-thu"
-                        name="dayThu"
+                        data-group="1"
+                        id="day-1-thu"
+                        name="day1Thu"
                       />
                       <span class="schedule-day-name">Thursday</span>
                     </label>
@@ -267,7 +273,7 @@
                       <label class="radio-label">
                         <input
                           type="radio"
-                          name="time-thu"
+                          name="time-1-thu"
                           value="3:30"
                           disabled
                         />
@@ -276,7 +282,7 @@
                       <label class="radio-label">
                         <input
                           type="radio"
-                          name="time-thu"
+                          name="time-1-thu"
                           value="5:30"
                           disabled
                         />
@@ -289,8 +295,9 @@
                       <input
                         type="checkbox"
                         class="schedule-day-cb"
-                        id="day-fri"
-                        name="dayFri"
+                        data-group="1"
+                        id="day-1-fri"
+                        name="day1Fri"
                       />
                       <span class="schedule-day-name">Friday</span>
                     </label>
@@ -298,7 +305,7 @@
                       <label class="radio-label">
                         <input
                           type="radio"
-                          name="time-fri"
+                          name="time-1-fri"
                           value="3:30"
                           disabled
                         />
@@ -307,7 +314,7 @@
                       <label class="radio-label">
                         <input
                           type="radio"
-                          name="time-fri"
+                          name="time-1-fri"
                           value="5:30"
                           disabled
                         />
@@ -317,7 +324,343 @@
                   </div>
                 </div>
               </div>
-              <input type="hidden" id="schedule-hidden" name="scheduleDays" />
+              <input type="hidden" id="schedule1-hidden" name="schedule1Days" />
+
+              <!-- 2nd choice -->
+              <div class="form-group schedule-choice-group">
+                <p class="schedule-choice-label">2nd choice days</p>
+                <div class="schedule-days">
+                  <div class="schedule-day-row">
+                    <label class="checkbox-label schedule-day-label">
+                      <input
+                        type="checkbox"
+                        class="schedule-day-cb"
+                        data-group="2"
+                        id="day-2-mon"
+                        name="day2Mon"
+                      />
+                      <span class="schedule-day-name">Monday</span>
+                    </label>
+                    <div class="schedule-time-opts">
+                      <label class="radio-label">
+                        <input
+                          type="radio"
+                          name="time-2-mon"
+                          value="3:30"
+                          disabled
+                        />
+                        <span>3:30 pm</span>
+                      </label>
+                      <label class="radio-label">
+                        <input
+                          type="radio"
+                          name="time-2-mon"
+                          value="5:30"
+                          disabled
+                        />
+                        <span>5:30 pm</span>
+                      </label>
+                    </div>
+                  </div>
+                  <div class="schedule-day-row">
+                    <label class="checkbox-label schedule-day-label">
+                      <input
+                        type="checkbox"
+                        class="schedule-day-cb"
+                        data-group="2"
+                        id="day-2-tue"
+                        name="day2Tue"
+                      />
+                      <span class="schedule-day-name">Tuesday</span>
+                    </label>
+                    <div class="schedule-time-opts">
+                      <label class="radio-label">
+                        <input
+                          type="radio"
+                          name="time-2-tue"
+                          value="3:30"
+                          disabled
+                        />
+                        <span>3:30 pm</span>
+                      </label>
+                      <label class="radio-label">
+                        <input
+                          type="radio"
+                          name="time-2-tue"
+                          value="5:30"
+                          disabled
+                        />
+                        <span>5:30 pm</span>
+                      </label>
+                    </div>
+                  </div>
+                  <div class="schedule-day-row">
+                    <label class="checkbox-label schedule-day-label">
+                      <input
+                        type="checkbox"
+                        class="schedule-day-cb"
+                        data-group="2"
+                        id="day-2-wed"
+                        name="day2Wed"
+                      />
+                      <span class="schedule-day-name">Wednesday</span>
+                    </label>
+                    <div class="schedule-time-opts">
+                      <label class="radio-label">
+                        <input
+                          type="radio"
+                          name="time-2-wed"
+                          value="3:30"
+                          disabled
+                        />
+                        <span>3:30 pm</span>
+                      </label>
+                      <label class="radio-label">
+                        <input
+                          type="radio"
+                          name="time-2-wed"
+                          value="5:30"
+                          disabled
+                        />
+                        <span>5:30 pm</span>
+                      </label>
+                    </div>
+                  </div>
+                  <div class="schedule-day-row">
+                    <label class="checkbox-label schedule-day-label">
+                      <input
+                        type="checkbox"
+                        class="schedule-day-cb"
+                        data-group="2"
+                        id="day-2-thu"
+                        name="day2Thu"
+                      />
+                      <span class="schedule-day-name">Thursday</span>
+                    </label>
+                    <div class="schedule-time-opts">
+                      <label class="radio-label">
+                        <input
+                          type="radio"
+                          name="time-2-thu"
+                          value="3:30"
+                          disabled
+                        />
+                        <span>3:30 pm</span>
+                      </label>
+                      <label class="radio-label">
+                        <input
+                          type="radio"
+                          name="time-2-thu"
+                          value="5:30"
+                          disabled
+                        />
+                        <span>5:30 pm</span>
+                      </label>
+                    </div>
+                  </div>
+                  <div class="schedule-day-row">
+                    <label class="checkbox-label schedule-day-label">
+                      <input
+                        type="checkbox"
+                        class="schedule-day-cb"
+                        data-group="2"
+                        id="day-2-fri"
+                        name="day2Fri"
+                      />
+                      <span class="schedule-day-name">Friday</span>
+                    </label>
+                    <div class="schedule-time-opts">
+                      <label class="radio-label">
+                        <input
+                          type="radio"
+                          name="time-2-fri"
+                          value="3:30"
+                          disabled
+                        />
+                        <span>3:30 pm</span>
+                      </label>
+                      <label class="radio-label">
+                        <input
+                          type="radio"
+                          name="time-2-fri"
+                          value="5:30"
+                          disabled
+                        />
+                        <span>5:30 pm</span>
+                      </label>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <input type="hidden" id="schedule2-hidden" name="schedule2Days" />
+
+              <!-- 3rd choice -->
+              <div class="form-group schedule-choice-group">
+                <p class="schedule-choice-label">3rd choice days</p>
+                <div class="schedule-days">
+                  <div class="schedule-day-row">
+                    <label class="checkbox-label schedule-day-label">
+                      <input
+                        type="checkbox"
+                        class="schedule-day-cb"
+                        data-group="3"
+                        id="day-3-mon"
+                        name="day3Mon"
+                      />
+                      <span class="schedule-day-name">Monday</span>
+                    </label>
+                    <div class="schedule-time-opts">
+                      <label class="radio-label">
+                        <input
+                          type="radio"
+                          name="time-3-mon"
+                          value="3:30"
+                          disabled
+                        />
+                        <span>3:30 pm</span>
+                      </label>
+                      <label class="radio-label">
+                        <input
+                          type="radio"
+                          name="time-3-mon"
+                          value="5:30"
+                          disabled
+                        />
+                        <span>5:30 pm</span>
+                      </label>
+                    </div>
+                  </div>
+                  <div class="schedule-day-row">
+                    <label class="checkbox-label schedule-day-label">
+                      <input
+                        type="checkbox"
+                        class="schedule-day-cb"
+                        data-group="3"
+                        id="day-3-tue"
+                        name="day3Tue"
+                      />
+                      <span class="schedule-day-name">Tuesday</span>
+                    </label>
+                    <div class="schedule-time-opts">
+                      <label class="radio-label">
+                        <input
+                          type="radio"
+                          name="time-3-tue"
+                          value="3:30"
+                          disabled
+                        />
+                        <span>3:30 pm</span>
+                      </label>
+                      <label class="radio-label">
+                        <input
+                          type="radio"
+                          name="time-3-tue"
+                          value="5:30"
+                          disabled
+                        />
+                        <span>5:30 pm</span>
+                      </label>
+                    </div>
+                  </div>
+                  <div class="schedule-day-row">
+                    <label class="checkbox-label schedule-day-label">
+                      <input
+                        type="checkbox"
+                        class="schedule-day-cb"
+                        data-group="3"
+                        id="day-3-wed"
+                        name="day3Wed"
+                      />
+                      <span class="schedule-day-name">Wednesday</span>
+                    </label>
+                    <div class="schedule-time-opts">
+                      <label class="radio-label">
+                        <input
+                          type="radio"
+                          name="time-3-wed"
+                          value="3:30"
+                          disabled
+                        />
+                        <span>3:30 pm</span>
+                      </label>
+                      <label class="radio-label">
+                        <input
+                          type="radio"
+                          name="time-3-wed"
+                          value="5:30"
+                          disabled
+                        />
+                        <span>5:30 pm</span>
+                      </label>
+                    </div>
+                  </div>
+                  <div class="schedule-day-row">
+                    <label class="checkbox-label schedule-day-label">
+                      <input
+                        type="checkbox"
+                        class="schedule-day-cb"
+                        data-group="3"
+                        id="day-3-thu"
+                        name="day3Thu"
+                      />
+                      <span class="schedule-day-name">Thursday</span>
+                    </label>
+                    <div class="schedule-time-opts">
+                      <label class="radio-label">
+                        <input
+                          type="radio"
+                          name="time-3-thu"
+                          value="3:30"
+                          disabled
+                        />
+                        <span>3:30 pm</span>
+                      </label>
+                      <label class="radio-label">
+                        <input
+                          type="radio"
+                          name="time-3-thu"
+                          value="5:30"
+                          disabled
+                        />
+                        <span>5:30 pm</span>
+                      </label>
+                    </div>
+                  </div>
+                  <div class="schedule-day-row">
+                    <label class="checkbox-label schedule-day-label">
+                      <input
+                        type="checkbox"
+                        class="schedule-day-cb"
+                        data-group="3"
+                        id="day-3-fri"
+                        name="day3Fri"
+                      />
+                      <span class="schedule-day-name">Friday</span>
+                    </label>
+                    <div class="schedule-time-opts">
+                      <label class="radio-label">
+                        <input
+                          type="radio"
+                          name="time-3-fri"
+                          value="3:30"
+                          disabled
+                        />
+                        <span>3:30 pm</span>
+                      </label>
+                      <label class="radio-label">
+                        <input
+                          type="radio"
+                          name="time-3-fri"
+                          value="5:30"
+                          disabled
+                        />
+                        <span>5:30 pm</span>
+                      </label>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <input type="hidden" id="schedule3-hidden" name="schedule3Days" />
 
               <hr class="form-divider" />
 
@@ -828,7 +1171,7 @@
     </main>
 
     <div id="site-footer-placeholder"></div>
-    <script src="js/site.js?v=1.4" defer></script>
-    <script src="js/application.js?v=1.4" defer></script>
+    <script src="js/site.js?v=1.5" defer></script>
+    <script src="js/application.js?v=1.5" defer></script>
   </body>
 </html>
