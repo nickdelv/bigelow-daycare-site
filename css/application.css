@@ -220,6 +220,11 @@
   text-decoration: underline;
 }
 
+.info-download-link--inline {
+  display: inline;
+  margin-top: 0;
+}
+
 /* =============================================
    RESPONSIVE
    ============================================= */
