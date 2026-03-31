@@ -220,9 +220,23 @@
   text-decoration: underline;
 }
 
-.info-download-link--inline {
-  display: inline;
-  margin-top: 0;
+.app-fee-note a {
+  color: var(--terracotta);
+  font-weight: 500;
+  text-decoration: none;
+}
+
+.app-fee-note a:hover {
+  text-decoration: underline;
+}
+
+.form-success-body a {
+  color: #fff;
+  text-decoration: none;
+}
+
+.form-success-body a:hover {
+  text-decoration: underline;
 }
 
 /* =============================================
