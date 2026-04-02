@@ -1,6 +1,6 @@
 (function () {
   var SCRIPT_URL =
-    "https://script.google.com/macros/s/AKfycby-lINz_k0tdI26vYUOqBBuwwNzcKDUgcjiUIvDGFKyj9wwEBkzfU2LG-kJwBkzCsxdPw/exec";
+    "https://script.google.com/macros/s/AKfycbxnT8IOyK24rU4Y9q6UAOpcjQBmVdKW7uw-IWqoes8Z05ddAzCKGq-n4NNeYbNJmvOB/exec";
 
   var form = document.getElementById("tourForm");
   var success = document.getElementById("formSuccess");
