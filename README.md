@@ -3,13 +3,12 @@
 Public website for Bigelow Cooperative Daycare, a parent-cooperative childcare center in Somerville, MA serving children ages 3 months to 5 years.
 
 - **Live:** https://bigelowcoop.org
-- **Staging:** https://staging.bigelowcoop.org
 
 ---
 
 ## Stack
 
-Static HTML, CSS, and JavaScript. No build step, no framework, no dependencies. Deployed via DreamHost using a GitHub Actions workflow on push to `main`.
+Static HTML, CSS, and JavaScript. No build step, no framework, no dependencies. Deployed via Netlify on push to `main`.
 
 ---
 
@@ -88,9 +87,4 @@ Breakpoints:
 
 ## Deployment
 
-Pushes to `main` trigger the GitHub Actions deploy workflow, which syncs the site to the staging server via SFTP.
-
-Credentials are stored as GitHub Actions secrets:
-
-- `FTP_USERNAME`
-- `FTP_PASSWORD`
+Pushes to `main` are automatically deployed to Netlify. No build step or configuration required.
