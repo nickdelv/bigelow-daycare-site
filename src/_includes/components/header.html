@@ -1,8 +1,11 @@
-<div class="announcement-banner" role="alert" style="display: none">
-  <span
-    >Open House — Saturday, January 30 · 10am–12pm at 44 Park Street ·
-    <a href="schedule-a-tour.html">Learn more</a></span
-  >
+{% if client.announcement.enabled %}
+<div class="announcement-banner" role="alert">
+  <span>
+    {{ client.announcement.text }} ·
+    <a href="{{ client.announcement.linkUrl }}">
+      {{ client.announcement.linkText }}
+    </a>
+  </span>
   <button
     class="banner-close"
     onclick="this.parentElement.style.display = 'none'"
@@ -11,6 +14,7 @@
     &times;
   </button>
 </div>
+{% endif %}
 
 <nav class="site-nav" role="navigation" aria-label="Main navigation">
   <div class="container">
@@ -33,7 +37,9 @@
       aria-expanded="false"
       aria-controls="navLinks"
     >
-      <span></span><span></span><span></span>
+      <span></span>
+      <span></span>
+      <span></span>
     </button>
     <ul class="nav-links" id="navLinks">
       <li><a href="about.html">About</a></li>

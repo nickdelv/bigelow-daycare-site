@@ -11,3 +11,7 @@ __pycache__/
 
 # Script
 compress-images.py
+
+# Eleventy
+node_modules/
+public/

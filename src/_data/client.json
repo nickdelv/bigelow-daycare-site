@@ -1,0 +1,27 @@
+{
+  "name": "Bigelow Cooperative Daycare",
+  "domain": "https://bigelowcoop.org",
+  "email": "info@bigelowcoop.org",
+  "enrollmentEmail": "enrollment@bigelowcoop.org",
+  "phone": "617-623-5400",
+  "phoneTel": "6176235400",
+  "address": {
+    "street": "44 Park Street",
+    "city": "Somerville",
+    "state": "MA",
+    "zip": "02143"
+  },
+  "mapsUrl": "https://www.google.com/maps/place/Bigelow+Cooperative+Daycare+Center/@42.3812473,-71.111402,17z/data=!3m1!4b1!4m6!3m5!1s0x89e37737b012f0d3:0x90703595a9a9acf4!8m2!3d42.3812434!4d-71.1065365!16s%2Fg%2F1260_hkv5?entry=ttu&g_ep=EgoyMDI2MDMwNC4xIKXMDSoASAFQAw%3D%3D",
+  "facebookUrl": "https://facebook.com/bigelowcoop",
+  "instagramUrl": "https://instagram.com/bigelowcoop",
+  "paypalUrl": "https://www.paypal.com/ncp/payment/69WA625DJM2AJ",
+  "printableApplicationUrl": "https://docs.google.com/document/d/1SYl2AGPH1L3zIo_goiRAPoRbIAViH68y/export?format=pdf",
+  "directorName": "Dawn Lorino",
+  "applicationFee": "$50",
+  "announcement": {
+    "enabled": false,
+    "text": "Open House — Saturday, January 30 · 10am–12pm at 44 Park Street",
+    "linkText": "Learn more",
+    "linkUrl": "schedule-a-tour.html"
+  }
+}

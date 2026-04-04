@@ -7,7 +7,7 @@
    ============================================= */
 
 .tour-body {
-  padding: var(--sp-xl) 0 var(--sp-2xl);
+  padding: 0 0 var(--sp-2xl);
 }
 
 .tour-grid {
@@ -15,6 +15,7 @@
   grid-template-columns: 1fr 380px;
   gap: 5rem;
   align-items: start;
+  padding-top: var(--sp-xl);
 }
 
 /* =============================================
@@ -62,12 +63,13 @@
 
 @media (max-width: 860px) {
   .tour-body {
-    padding: var(--sp-lg) 0 var(--sp-xl);
+    padding: 0 0 var(--sp-xl);
   }
 
   .tour-grid {
     grid-template-columns: 1fr;
     gap: 2rem;
+    padding-top: var(--sp-lg);
   }
 
   .tour-info {

@@ -3,39 +3,14 @@
    Shared interactions across all pages
    ============================================= */
 
-/* --- Shared component injection --- */
-(function () {
-  function injectComponent(selector, file, callback) {
-    const el = document.querySelector(selector);
-    if (!el) return;
-    fetch(file)
-      .then((r) => r.text())
-      .then((html) => {
-        el.innerHTML = html;
-        if (callback) callback();
-      });
-  }
-
-  // Mark the current page link as active
-  function markCurrentPage() {
-    const path = window.location.pathname.split("/").pop() || "index.html";
-    document.querySelectorAll(".nav-links a").forEach((a) => {
-      const href = a.getAttribute("href").split("#")[0];
-      if (href === path) a.setAttribute("aria-current", "page");
-    });
-  }
-
-  injectComponent(
-    "#site-nav-placeholder",
-    "components/header.html",
-    function () {
-      markCurrentPage();
-      initNav();
-    },
-  );
-
-  injectComponent("#site-footer-placeholder", "components/footer.html");
-})();
+/* --- Mark current page and init nav (header rendered at build time) --- */
+function markCurrentPage() {
+  const path = window.location.pathname.split("/").pop() || "index.html";
+  document.querySelectorAll(".nav-links a").forEach((a) => {
+    const href = a.getAttribute("href").split("#")[0];
+    if (href === path) a.setAttribute("aria-current", "page");
+  });
+}
 
 /* --- Mobile nav hamburger --- */
 function initNav() {
@@ -55,9 +30,12 @@ function initNav() {
       links.classList.remove("is-open");
       toggle.classList.remove("is-open");
       toggle.setAttribute("aria-expanded", false);
-    }),
+    })
   );
 }
+
+markCurrentPage();
+initNav();
 
 (function () {
   const track = document.getElementById("tTrack");
@@ -70,13 +48,13 @@ function initNav() {
   document
     .getElementById("tPrev")
     ?.addEventListener("click", () =>
-      track.scrollBy({ left: -scrollAmount(), behavior: "smooth" }),
+      track.scrollBy({ left: -scrollAmount(), behavior: "smooth" })
     );
 
   document
     .getElementById("tNext")
     ?.addEventListener("click", () =>
-      track.scrollBy({ left: scrollAmount(), behavior: "smooth" }),
+      track.scrollBy({ left: scrollAmount(), behavior: "smooth" })
     );
 })();
 

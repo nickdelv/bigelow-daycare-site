@@ -104,7 +104,7 @@
   // Clear errors on input/change
   form
     .querySelectorAll(
-      "input:not([type='checkbox']):not([type='radio']), select, textarea",
+      "input:not([type='checkbox']):not([type='radio']), select, textarea"
     )
     .forEach(function (el) {
       el.addEventListener("input", function () {
@@ -205,7 +205,7 @@
 
     // Validate 1st choice only (required)
     var checkedDays1 = Array.from(
-      form.querySelectorAll('.schedule-day-cb[data-group="1"]:checked'),
+      form.querySelectorAll('.schedule-day-cb[data-group="1"]:checked')
     );
     if (checkedDays1.length === 0) {
       showGroupError(scheduleDaysGroup, "Please select at least one day.");
@@ -221,7 +221,7 @@
       ) {
         showGroupError(
           scheduleDaysGroup,
-          "Schedules of fewer than 5 days must include a Monday or Friday.",
+          "Schedules of fewer than 5 days must include a Monday or Friday."
         );
         if (!firstErrorEl) firstErrorEl = scheduleDaysGroup;
         valid = false;
@@ -251,10 +251,10 @@
         var cb = document.getElementById("day-" + group.num + "-" + day.id);
         if (cb && cb.checked) {
           var timeRadio = form.querySelector(
-            'input[name="time-' + group.num + "-" + day.id + '"]:checked',
+            'input[name="time-' + group.num + "-" + day.id + '"]:checked'
           );
           parts.push(
-            day.abbr + " (" + (timeRadio ? timeRadio.value : "") + ")",
+            day.abbr + " (" + (timeRadio ? timeRadio.value : "") + ")"
           );
         }
       });
@@ -264,7 +264,7 @@
     // Disable raw schedule inputs so FormData doesn't include them
     form
       .querySelectorAll(
-        ".schedule-day-cb, .schedule-day-row input[type='radio']",
+        ".schedule-day-cb, .schedule-day-row input[type='radio']"
       )
       .forEach(function (el) {
         el.disabled = true;
@@ -272,7 +272,7 @@
 
     // Consolidate referral checkboxes into hidden field, then disable
     var referralChecked = Array.from(
-      document.querySelectorAll('input[name="referral"]:checked'),
+      document.querySelectorAll('input[name="referral"]:checked')
     ).map(function (cb) {
       return cb.value;
     });

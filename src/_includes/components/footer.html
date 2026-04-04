@@ -4,24 +4,22 @@
       <div class="footer-brand">
         <p class="footer-name"><a href="index.html">Bigelow Cooperative</a></p>
         <address class="footer-address">
-          44 Park Street<br />
-          Somerville, MA 02143<br />
-          <a href="tel:6176235400">617-623-5400</a><br />
-          <a href="mailto:info@bigelowcoop.org">info@bigelowcoop.org</a>
+          {{ client.address.street }}
+          <br />
+          {{ client.address.city }}, {{ client.address.state }} {{
+          client.address.zip }}
+          <br />
+          <a href="tel:{{ client.phoneTel }}">{{ client.phone }}</a>
+          <br />
+          <a href="mailto:{{ client.email }}">{{ client.email }}</a>
         </address>
         <div class="footer-social">
-          <a
-            href="https://facebook.com/bigelowcoop"
-            target="_blank"
-            rel="noopener"
-            >Facebook</a
-          >
-          <a
-            href="https://instagram.com/bigelowcoop"
-            target="_blank"
-            rel="noopener"
-            >Instagram</a
-          >
+          <a href="{{ client.facebookUrl }}" target="_blank" rel="noopener">
+            Facebook
+          </a>
+          <a href="{{ client.instagramUrl }}" target="_blank" rel="noopener">
+            Instagram
+          </a>
         </div>
       </div>
       <div class="footer-col">
@@ -45,7 +43,8 @@
     </div>
     <div class="footer-bottom">
       <p>
-        &copy; 2026 Bigelow Cooperative Daycare Center. All rights reserved.
+        &copy; {{ currentYear }} Bigelow Cooperative Daycare Center. All rights
+        reserved.
       </p>
       <p>
         Site by
@@ -54,8 +53,9 @@
           target="_blank"
           rel="noopener"
           class="footer-credit-link"
-          >Mossland</a
         >
+          Mossland
+        </a>
       </p>
     </div>
   </div>

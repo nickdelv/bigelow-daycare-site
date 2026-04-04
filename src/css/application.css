@@ -8,7 +8,7 @@
    ============================================= */
 
 .app-body {
-  padding: var(--sp-xl) 0 var(--sp-2xl);
+  padding: 0 0 var(--sp-2xl);
 }
 
 .app-grid {
@@ -16,6 +16,7 @@
   grid-template-columns: 1fr 320px;
   gap: 4rem;
   align-items: start;
+  padding-top: var(--sp-xl);
 }
 
 /* =============================================
@@ -252,12 +253,13 @@
 
 @media (max-width: 860px) {
   .app-body {
-    padding: var(--sp-lg) 0 var(--sp-xl);
+    padding: 0 0 var(--sp-xl);
   }
 
   .app-grid {
     grid-template-columns: 1fr;
     gap: 2rem;
+    padding-top: var(--sp-lg);
   }
 
   .app-info {

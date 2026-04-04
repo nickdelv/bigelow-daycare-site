@@ -1,0 +1,14 @@
+{
+  "name": "bigelow-daycare-site",
+  "version": "1.0.0",
+  "description": "Bigelow Cooperative Daycare website",
+  "scripts": {
+    "dev": "eleventy --serve",
+    "build": "eleventy",
+    "format": "prettier --write ."
+  },
+  "devDependencies": {
+    "@11ty/eleventy": "^3.0.0",
+    "prettier": "^3.8.1"
+  }
+}

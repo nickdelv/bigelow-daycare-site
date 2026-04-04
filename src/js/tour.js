@@ -80,7 +80,7 @@
     if (!validate()) return;
 
     var checked = Array.from(
-      document.querySelectorAll('input[type="checkbox"][name="days"]:checked'),
+      document.querySelectorAll('input[type="checkbox"][name="days"]:checked')
     ).map(function (cb) {
       return cb.value;
     });

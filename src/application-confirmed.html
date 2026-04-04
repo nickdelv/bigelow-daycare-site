@@ -1,0 +1,31 @@
+---
+title: Application Fee Received | Bigelow Cooperative Daycare
+noindex: true
+---
+
+{% extends "layouts/base.html" %} {% block head %}
+<style>
+  body {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+  }
+  main {
+    flex: 1;
+  }
+</style>
+{% endblock %} {% block body %}
+<section class="cta-section">
+  <div class="container">
+    <span class="label">Application received</span>
+    <h1 class="cta-heading">Application Fee Received</h1>
+    <p class="cta-sub">
+      Your $50 application fee has been received. The Bigelow team will be in
+      touch soon with next steps.
+    </p>
+    <div class="cta-actions">
+      <a href="enrollment.html" class="text-link">← Back to enrollment</a>
+    </div>
+  </div>
+</section>
+{% endblock %}

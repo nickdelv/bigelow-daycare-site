@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Google tag (gtag.js) -->
+    <script
+      async
+      src="https://www.googletagmanager.com/gtag/js?id={{ site.analyticsId }}"
+    ></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
+      gtag("config", "{{ site.analyticsId }}");
+    </script>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>{{ title }}</title>
+    <meta
+      name="description"
+      content="{{ description or site.defaultDescription }}"
+    />
+    {% if noindex %}
+    <meta name="robots" content="noindex" />
+    {% endif %}
+    <meta property="og:title" content="{{ title }}" />
+    <meta
+      property="og:description"
+      content="{{ description or site.defaultDescription }}"
+    />
+    <meta property="og:url" content="{{ client.domain }}{{ page.url }}" />
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="{{ client.name }}" />
+    <meta
+      property="og:image"
+      content="{{ client.domain }}{{ ogImage or site.defaultOgImage }}"
+    />
+    <link rel="icon" href="/assets/favicon.ico" sizes="any" />
+    <link
+      rel="icon"
+      href="/assets/favicon_32.png"
+      type="image/png"
+      sizes="32x32"
+    />
+    <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png" />
+    <link rel="canonical" href="{{ client.domain }}{{ page.url }}" />
+    <link rel="stylesheet" href="/css/shared.css" />
+    {% block head %}{% endblock %}
+  </head>
+  <body>
+    {% include "components/header.html" %}
+
+    <main class="{{ mainClass }}">{% block body %}{% endblock %}</main>
+
+    {% include "components/footer.html" %}
+
+    <script src="/js/site.js" defer></script>
+  </body>
+</html>

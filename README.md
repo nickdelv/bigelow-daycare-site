@@ -8,24 +8,40 @@ Public website for Bigelow Cooperative Daycare, a parent-cooperative childcare c
 
 ## Stack
 
-Static HTML, CSS, and JavaScript. No build step, no framework, no dependencies. Deployed via Netlify on push to `main`.
+[Eleventy](https://www.11ty.dev/) (v3) static site generator with Nunjucks templating. Deployed via Netlify on push to `main`.
+
+---
+
+## Local development
+
+```bash
+npm install
+npm run dev
+```
+
+Opens at `http://localhost:8080`. Watches for file changes and reloads automatically.
+
+```bash
+npm run build    # Production build → public/
+npm run format   # Format all files with Prettier
+```
 
 ---
 
 ## Repo structure
 
 ```text
-/
-├── index.html                 # Home
-├── about.html
-├── programs.html
-├── enrollment.html
-├── schedule-a-tour.html
-├── apply.html                 # Online application form
+src/
+├── _data/
+│   ├── client.json            # Site-wide contact info, URLs, social links
+│   └── site.json              # Analytics ID, default OG image, default description
 │
-├── components/
-│   ├── header.html            # Nav + announcement banner (injected via JS)
-│   └── footer.html            # Site footer (injected via JS)
+├── _includes/
+│   ├── layouts/
+│   │   └── base.html          # Base layout: <head>, GA, meta/OG tags, header, footer
+│   └── components/
+│       ├── header.html        # Nav + announcement banner
+│       └── footer.html        # Site footer
 │
 ├── css/
 │   ├── shared.css             # Tokens, reset, nav, footer, buttons, shared patterns,
@@ -38,7 +54,7 @@ Static HTML, CSS, and JavaScript. No build step, no framework, no dependencies. 
 │   └── application.css        # Layout for apply.html
 │
 ├── js/
-│   ├── site.js                # Component injection, nav, carousel, tabs, FAQ
+│   ├── site.js                # Nav, carousel, tabs, FAQ accordion
 │   ├── tour.js                # Tour form submission
 │   └── application.js         # Application form submission
 │
@@ -48,26 +64,42 @@ Static HTML, CSS, and JavaScript. No build step, no framework, no dependencies. 
 │   ├── apple-touch-icon.png
 │   └── images/
 │
-└── docs/                      # Architecture and design system documentation
+├── sitemap.xml
+├── robots.html                # Renders to /robots.txt
+│
+├── index.html
+├── about.html
+├── programs.html
+├── enrollment.html
+├── schedule-a-tour.html
+├── apply.html
+├── application-confirmed.html
+└── 404.html
+
+public/                        # Build output — gitignored
 ```
 
 ---
 
-## Component injection
+## Templates
 
-The nav and footer are stored as shared HTML fragments in `/components`.
+Each page extends the base layout using Nunjucks template inheritance:
 
-`site.js` fetches `components/header.html` and `components/footer.html` at runtime and injects them into the page placeholders. Because of this, the site should be developed using a local server — opening files directly via `file://` will not work.
+```html
+---
+title: Page Title | Bigelow Cooperative Daycare
+description: Page description for SEO.
+ogImage: /assets/images/bigelow-building.webp
+---
 
-Example:
+{% extends "layouts/base.html" %} {% block head %}
+<link rel="stylesheet" href="/css/page.css" />
+{% endblock %} {% block body %}
+<!-- page content -->
+{% endblock %}
+```
 
-Run a local server:
-
-npx serve .
-
-or
-
-python3 -m http.server 8000
+Front matter variables available: `title`, `description`, `ogImage`, `noindex`, `mainClass`, `permalink`.
 
 ---
 
@@ -87,4 +119,4 @@ Breakpoints:
 
 ## Deployment
 
-Pushes to `main` are automatically deployed to Netlify. No build step or configuration required.
+Pushes to `main` are automatically deployed to Netlify. The build command is `npm run build` and the publish directory is `public/`. Netlify handles asset cache-busting automatically.
