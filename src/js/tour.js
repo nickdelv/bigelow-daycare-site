@@ -37,11 +37,11 @@
 
     var name = form.querySelector("#parentName");
     var email = form.querySelector("#email");
-    var age = form.querySelector("#childAge");
+    var dob = form.querySelector("#childDob");
 
     clearError(name);
     clearError(email);
-    clearError(age);
+    clearError(dob);
 
     if (!name.value.trim()) {
       showError(name, "Please enter your name.");
@@ -57,9 +57,9 @@
       if (!firstErrorEl) firstErrorEl = email;
       valid = false;
     }
-    if (!age.value) {
-      showError(age, "Please select an age range.");
-      if (!firstErrorEl) firstErrorEl = age;
+    if (!dob.value) {
+      showError(dob, "Please enter your child's date of birth.");
+      if (!firstErrorEl) firstErrorEl = dob;
       valid = false;
     }
 
