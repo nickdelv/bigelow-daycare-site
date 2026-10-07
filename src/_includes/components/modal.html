@@ -1,0 +1,10 @@
+{% if client.modal.enabled %}
+<div class="modal-overlay" id="siteModal" role="dialog" aria-modal="true">
+  <div class="modal-card">
+    <button class="modal-close" id="modalClose" aria-label="Close">
+      &times;
+    </button>
+    <img src="{{ client.modal.image }}" alt="Event flyer" class="modal-image" />
+  </div>
+</div>
+{% endif %}

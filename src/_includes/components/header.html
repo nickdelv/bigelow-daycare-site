@@ -1,16 +1,13 @@
 {% if client.announcement.enabled %}
 <div class="announcement-banner" role="alert">
   <span>
-    {{ client.announcement.text }} ·
+    {{ client.announcement.text }} {% if client.announcement.linkText %} ·
     <a href="{{ client.announcement.linkUrl }}">
       {{ client.announcement.linkText }}
     </a>
+    {% endif %}
   </span>
-  <button
-    class="banner-close"
-    onclick="this.parentElement.style.display = 'none'"
-    aria-label="Dismiss"
-  >
+  <button class="banner-close" id="bannerClose" aria-label="Dismiss">
     &times;
   </button>
 </div>

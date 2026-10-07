@@ -37,6 +37,39 @@ function initNav() {
 markCurrentPage();
 initNav();
 
+/* --- Announcement banner (dismiss persists for session) --- */
+(function () {
+  var banner = document.querySelector(".announcement-banner");
+  if (!banner) return;
+  if (sessionStorage.getItem("bannerDismissed")) return;
+
+  banner.classList.add("is-visible");
+
+  document.getElementById("bannerClose").addEventListener("click", function () {
+    banner.classList.remove("is-visible");
+    sessionStorage.setItem("bannerDismissed", "1");
+  });
+})();
+
+/* --- Site modal (once per session) --- */
+(function () {
+  const modal = document.getElementById("siteModal");
+  if (!modal) return;
+  if (sessionStorage.getItem("modalDismissed")) return;
+
+  modal.classList.add("is-visible");
+
+  function close() {
+    modal.classList.remove("is-visible");
+    sessionStorage.setItem("modalDismissed", "1");
+  }
+
+  document.getElementById("modalClose").addEventListener("click", close);
+  modal.addEventListener("click", function (e) {
+    if (e.target === modal) close();
+  });
+})();
+
 (function () {
   const track = document.getElementById("tTrack");
   if (!track) return;

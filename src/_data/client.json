@@ -20,8 +20,12 @@
   "applicationFee": "$50",
   "announcement": {
     "enabled": false,
-    "text": "Open House — Saturday, January 30 · 10am–12pm at 44 Park Street",
-    "linkText": "Learn more",
-    "linkUrl": "schedule-a-tour.html"
+    "text": "Open House — Saturday, October 18 · 10am–12pm at 44 Park Street",
+    "linkText": "",
+    "linkUrl": ""
+  },
+  "modal": {
+    "enabled": true,
+    "image": "/assets/images/open-house-2026.png"
   }
 }
