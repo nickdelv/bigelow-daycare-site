@@ -14,13 +14,6 @@
   margin-bottom: 1.5rem;
 }
 
-.hiring-links {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 1rem 2rem;
-  margin-top: var(--sp-md);
-}
-
 .hiring-positions {
   background: var(--cream);
 }
@@ -98,6 +91,12 @@
 .job-details dt {
   font-weight: 600;
   color: var(--charcoal);
+}
+
+.job-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem 2rem;
 }
 
 @media (max-width: 600px) {
