@@ -341,10 +341,9 @@ ogImage: /assets/images/bigelow-building.webp
     <p class="section-body">
       To apply, email your resume and cover letter {% if client.hiringEmail %}
       to
-      <a class="text-link" href="mailto:{{ client.hiringEmail }}">
-        {{ client.hiringEmail }}
-      </a>
-      . {% else %} to [hiring email address to come]. {% endif %} Include the
+      <a class="text-link" href="mailto:{{ client.hiringEmail }}"
+        >{{ client.hiringEmail }}</a
+      >. {% else %} to [hiring email address to come]. {% endif %} Include the
       position title in your subject line, and tell us about your experience and
       interest in working at a cooperative daycare.
     </p>
