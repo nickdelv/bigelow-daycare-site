@@ -1,0 +1,48 @@
+---
+title: Parent Portal | Bigelow Cooperative Daycare
+description: The Bigelow Cooperative Daycare parent portal — handbooks, forms, calendars, and shared resources for current Bigelow Co-op families.
+---
+
+{% extends "layouts/base.html" %} {% block head %}
+<style>
+  body {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+  }
+  main {
+    flex: 1;
+  }
+  .portal-note {
+    margin-top: var(--sp-md);
+    font-size: 0.875rem;
+    color: var(--charcoal-light);
+  }
+</style>
+{% endblock %} {% block body %}
+<section class="cta-section">
+  <div class="container">
+    <span class="label">Current families</span>
+    <h1 class="cta-heading">Parent Portal</h1>
+    <p class="cta-sub">
+      Handbooks, forms, calendars, and shared resources for Bigelow Co-op
+      families live in our shared Google Drive folder.
+    </p>
+    <div class="cta-actions">
+      <a
+        href="{{ client.parentPortalUrl }}"
+        class="btn btn-primary"
+        target="_blank"
+        rel="noopener"
+      >
+        Open the parent portal ↗
+      </a>
+    </div>
+    <p class="portal-note">
+      Sign in with the Google account on the Bigelow parents list. Trouble
+      getting in? Email
+      <a href="mailto:{{ client.email }}">{{ client.email }}</a>.
+    </p>
+  </div>
+</section>
+{% endblock %}

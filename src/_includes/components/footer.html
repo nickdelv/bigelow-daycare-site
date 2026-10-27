@@ -40,6 +40,9 @@
           <li><a href="schedule-a-tour.html">Request enrollment info</a></li>
           <li><a href="apply.html">Submit an application</a></li>
         </ul>
+        {% if client.parentPortalUrl %}
+        <a href="parents.html" class="footer-portal-link">Parent portal</a>
+        {% endif %}
       </div>
     </div>
     <div class="footer-bottom">
