@@ -339,8 +339,8 @@ ogImage: /assets/images/bigelow-building.webp
       We'd love to hear from you.
     </h2>
     <p class="section-body">
-      To apply, email your resume and cover letter {% if client.hiringEmail %}
-      to
+      To apply, email your resume and EEC certificate {% if client.hiringEmail
+      %} to
       <a class="text-link" href="mailto:{{ client.hiringEmail }}"
         >{{ client.hiringEmail }}</a
       >. {% else %} to [hiring email address to come]. {% endif %} Include the
@@ -349,7 +349,7 @@ ogImage: /assets/images/bigelow-building.webp
     </p>
     {% if client.hiringEmail %}
     <a class="btn btn-primary" href="mailto:{{ client.hiringEmail }}">
-      Email your resume and cover letter
+      Email your resume and EEC certificate
     </a>
     {% endif %}
   </div>
